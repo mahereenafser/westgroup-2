@@ -75,11 +75,14 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
     <div
       ref={ref}
       {...rest}
-      className={`absolute top-1/2 left-1/2 rounded-xl border p-6
-      bg-neutral-900 text-white border-neutral-700
-      dark:bg-black dark:border-neutral-800
+      className={`absolute top-1/2 left-1/2 rounded-2xl border p-8
+      bg-black/40 backdrop-blur-sm text-white border-primary-500/30
       [transform-style:preserve-3d] [will-change:transform] [backface-visibility:hidden]
-      transition-colors duration-300 ${className ?? ''}`.trim()}
+      shadow-lg hover:shadow-xl transition-all duration-300 ${className ?? ''}`.trim()}
+      style={{
+        backdropFilter: 'blur(10px)',
+        WebkitBackdropFilter: 'blur(10px)',
+      }}
     />
   ),
 );
