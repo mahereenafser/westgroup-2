@@ -8,5 +8,16 @@ export default defineConfig({
     react()
   ],
   site: 'https://westgroupfinancial.vercel.app',
-  output: 'static'
+  output: 'static',
+  vite: {
+    build: {
+      rollupOptions: {
+        onwarn(warning, warn) {
+          // Suppress certain warnings
+          if (warning.code === 'UNUSED_EXTERNAL_IMPORT') return;
+          warn(warning);
+        }
+      }
+    }
+  }
 });
