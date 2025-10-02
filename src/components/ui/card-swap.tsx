@@ -30,6 +30,7 @@ interface CardSwapProps {
   onCardClick?: (index: number) => void;
   skewAmount?: number;
   easing?: 'elastic' | 'power';
+  visibleCards?: number;
 }
 
 interface Slot {
@@ -96,6 +97,7 @@ const CardSwap = ({
   onCardClick,
   skewAmount = 6,
   easing = 'elastic',
+  visibleCards = 4,
   children,
 }: CardSwapProps) => {
   const config = useMemo(
@@ -141,6 +143,12 @@ const CardSwap = ({
           makeSlot(i, cardDistance, verticalDistance, total),
           skewAmount,
         );
+        // Hide cards beyond visible count
+        if (i >= visibleCards) {
+          gsap.set(r.current, { opacity: 0, visibility: 'hidden' });
+        } else {
+          gsap.set(r.current, { opacity: 1, visibility: 'visible' });
+        }
       }
     });
 
@@ -166,6 +174,12 @@ const CardSwap = ({
         if (!el) return;
         const slot = makeSlot(i, cardDistance, verticalDistance, total);
         tl.set(el, { zIndex: slot.zIndex }, 'promote');
+
+        // Show the next card when it comes into view
+        if (i === visibleCards - 1) {
+          tl.set(el, { opacity: 1, visibility: 'visible' }, 'promote');
+        }
+
         tl.to(
           el,
           {
@@ -188,7 +202,14 @@ const CardSwap = ({
         { y: backSlot.y, duration: config.durReturn, ease: config.ease },
         'return',
       );
-      tl.call(() => (order.current = [...rest, front]));
+      tl.call(() => {
+        order.current = [...rest, front];
+        // Hide the card that went to the back if it's beyond visible count
+        const newBackPosition = order.current.indexOf(front);
+        if (newBackPosition >= visibleCards) {
+          gsap.set(elFront, { opacity: 0, visibility: 'hidden' });
+        }
+      });
     };
 
     // Initial animation call
@@ -219,7 +240,7 @@ const CardSwap = ({
       clearTimeout(timeoutId);
       clearInterval(intervalRef.current);
     };
-  }, [cardDistance, verticalDistance, delay, pauseOnHover, skewAmount, config, refs]);
+  }, [cardDistance, verticalDistance, delay, pauseOnHover, skewAmount, config, refs, visibleCards]);
 
   const renderedChildren = childArr.map((child, i) =>
     isValidElement(child)
