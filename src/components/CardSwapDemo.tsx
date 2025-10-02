@@ -11,7 +11,7 @@ function CardSwapDemo() {
   return (
     <div className="flex w-full h-full items-center justify-center p-4">
       <div
-        className="relative w-full max-w-6xl"
+        className="relative w-full max-w-6xl mx-auto"
         style={{ height: '600px' }}
       >
         <CardSwap

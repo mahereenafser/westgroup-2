@@ -238,10 +238,12 @@ const CardSwap = ({
   return (
     <div
       ref={containerRef}
-      className="absolute bottom-0 right-0 origin-bottom-right perspective-[900px] overflow-visible
-      transform translate-x-[5%] translate-y-[20%]
-      max-[768px]:scale-[0.75] max-[768px]:translate-x-[25%] max-[768px]:translate-y-[25%]
-      max-[480px]:scale-[0.55] max-[480px]:translate-x-[25%] max-[480px]:translate-y-[25%]"
+      className="relative mx-auto perspective-[900px] overflow-visible
+      transform
+      lg:scale-100
+      md:scale-[0.8]
+      sm:scale-[0.65]
+      max-sm:scale-[0.5]"
       style={{ width, height }}
     >
       {renderedChildren}

@@ -3,7 +3,7 @@
 import CardSwapDemo from './CardSwapDemo';
 ---
 
-<section id="services" class="section-padding" style="background-color: #1a1a1a;">
+<section id="services" class="section-padding bg-black">
   <div class="container-custom mx-auto">
     <div class="text-center mb-16 observe-scroll">
       <h2 class="text-4xl lg:text-5xl font-bold mb-6">
@@ -16,12 +16,12 @@ import CardSwapDemo from './CardSwapDemo';
       </p>
     </div>
 
-    <!-- CardSwap Animation Section -->
-    <div class="relative w-full mb-24" style="height: 700px;">
+    <!-- CardSwap Animation Section - Centered -->
+    <div class="relative w-full flex items-center justify-center mb-24 min-h-[700px] lg:min-h-[700px] md:min-h-[600px] sm:min-h-[500px]">
       <CardSwapDemo client:load />
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 hidden">
       <!-- Estate Planning -->
       <div class="card observe-scroll group hover:scale-105 transition-transform duration-300">
         <div class="flex items-center mb-4">
