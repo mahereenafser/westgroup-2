@@ -1,5 +1,6 @@
 ---
 // Services grid component
+import CardSwapDemo from './CardSwapDemo';
 ---
 
 <section id="services" class="section-padding" style="background-color: #1a1a1a;">
@@ -10,90 +11,17 @@
         <span class="gradient-text"> Financial Solutions</span>
       </h2>
       <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-        As your fee-only fiduciary advisors, we provide transparent, conflict-free financial planning 
+        As your fee-only fiduciary advisors, we provide transparent, conflict-free financial planning
         tailored to your unique goals and circumstances.
       </p>
     </div>
 
+    <!-- CardSwap Animation Section -->
+    <div class="relative w-full mb-24" style="height: 700px;">
+      <CardSwapDemo client:load />
+    </div>
+
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <!-- Wealth Management -->
-      <div class="card observe-scroll group hover:scale-105 transition-transform duration-300">
-        <div class="flex items-center mb-4">
-          <div class="p-3 bg-gradient-to-r from-primary-500 to-primary-400 rounded-lg mr-4 group-hover:animate-pulse">
-            <svg class="w-8 h-8 text-dark-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold text-white">Wealth Management</h3>
-        </div>
-        <p class="text-gray-300 mb-4 leading-relaxed">
-          Sophisticated investment portfolio management with tax-efficient strategies designed to preserve and grow your wealth across market cycles.
-        </p>
-        <ul class="text-sm text-gray-400 space-y-2 mb-6">
-          <li class="flex items-center"><span class="w-1.5 h-1.5 bg-accent-400 rounded-full mr-2"></span>Portfolio diversification and rebalancing</li>
-          <li class="flex items-center"><span class="w-1.5 h-1.5 bg-accent-400 rounded-full mr-2"></span>Tax-loss harvesting strategies</li>
-          <li class="flex items-center"><span class="w-1.5 h-1.5 bg-accent-400 rounded-full mr-2"></span>Risk management and asset protection</li>
-        </ul>
-        <a href="/services#wealth-management" class="text-primary-400 hover:text-primary-300 font-medium inline-flex items-center group">
-          Learn More 
-          <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-          </svg>
-        </a>
-      </div>
-
-      <!-- Retirement Planning -->
-      <div class="card observe-scroll group hover:scale-105 transition-transform duration-300">
-        <div class="flex items-center mb-4">
-          <div class="p-3 bg-gradient-to-r from-accent-600 to-accent-500 rounded-lg mr-4 group-hover:animate-pulse">
-            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold text-white">Retirement Income Planning</h3>
-        </div>
-        <p class="text-gray-300 mb-4 leading-relaxed">
-          Strategic retirement planning to ensure you maintain your lifestyle while minimizing tax burden throughout your retirement years.
-        </p>
-        <ul class="text-sm text-gray-400 space-y-2 mb-6">
-          <li class="flex items-center"><span class="w-1.5 h-1.5 bg-accent-400 rounded-full mr-2"></span>RRSP/RRIF optimization strategies</li>
-          <li class="flex items-center"><span class="w-1.5 h-1.5 bg-accent-400 rounded-full mr-2"></span>Pension maximization planning</li>
-          <li class="flex items-center"><span class="w-1.5 h-1.5 bg-accent-400 rounded-full mr-2"></span>Healthcare and long-term care planning</li>
-        </ul>
-        <a href="/services#retirement-planning" class="text-primary-400 hover:text-primary-300 font-medium inline-flex items-center group">
-          Learn More 
-          <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-          </svg>
-        </a>
-      </div>
-
-      <!-- Tax Planning -->
-      <div class="card observe-scroll group hover:scale-105 transition-transform duration-300">
-        <div class="flex items-center mb-4">
-          <div class="p-3 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg mr-4 group-hover:animate-pulse">
-            <svg class="w-8 h-8 text-dark-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold text-white">Tax-Efficient Strategies</h3>
-        </div>
-        <p class="text-gray-300 mb-4 leading-relaxed">
-          Advanced tax planning and optimization strategies to minimize your tax burden while maximizing after-tax investment returns.
-        </p>
-        <ul class="text-sm text-gray-400 space-y-2 mb-6">
-          <li class="flex items-center"><span class="w-1.5 h-1.5 bg-accent-400 rounded-full mr-2"></span>Corporate tax structure optimization</li>
-          <li class="flex items-center"><span class="w-1.5 h-1.5 bg-accent-400 rounded-full mr-2"></span>Capital gains tax minimization</li>
-          <li class="flex items-center"><span class="w-1.5 h-1.5 bg-accent-400 rounded-full mr-2"></span>Income splitting strategies</li>
-        </ul>
-        <a href="/services#tax-planning" class="text-primary-400 hover:text-primary-300 font-medium inline-flex items-center group">
-          Learn More 
-          <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-          </svg>
-        </a>
-      </div>
-
       <!-- Estate Planning -->
       <div class="card observe-scroll group hover:scale-105 transition-transform duration-300">
         <div class="flex items-center mb-4">
@@ -270,32 +198,6 @@
           <li class="flex items-center"><span class="w-1.5 h-1.5 bg-accent-400 rounded-full mr-2"></span>Investment property planning</li>
         </ul>
         <a href="/mortgage-services-vancouver" class="text-primary-400 hover:text-primary-300 font-medium inline-flex items-center group">
-          Learn More 
-          <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-          </svg>
-        </a>
-      </div>
-
-      <!-- Risk Management -->
-      <div class="card observe-scroll group hover:scale-105 transition-transform duration-300">
-        <div class="flex items-center mb-4">
-          <div class="p-3 bg-gradient-to-r from-purple-600 to-purple-500 rounded-lg mr-4 group-hover:animate-pulse">
-            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold text-white">Risk Management</h3>
-        </div>
-        <p class="text-gray-300 mb-4 leading-relaxed">
-          Comprehensive risk assessment and mitigation strategies to protect your wealth and financial goals.
-        </p>
-        <ul class="text-sm text-gray-400 space-y-2 mb-6">
-          <li class="flex items-center"><span class="w-1.5 h-1.5 bg-accent-400 rounded-full mr-2"></span>Portfolio risk analysis</li>
-          <li class="flex items-center"><span class="w-1.5 h-1.5 bg-accent-400 rounded-full mr-2"></span>Asset protection strategies</li>
-          <li class="flex items-center"><span class="w-1.5 h-1.5 bg-accent-400 rounded-full mr-2"></span>Diversification planning</li>
-        </ul>
-        <a href="/services" class="text-primary-400 hover:text-primary-300 font-medium inline-flex items-center group">
           Learn More 
           <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
