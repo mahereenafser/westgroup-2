@@ -9,12 +9,12 @@ function CardSwapDemo() {
   };
 
   return (
-    <div className="w-full flex items-center justify-center">
-      {/* Desktop: Side by side, Mobile: Stacked vertically centered */}
-      <div className="flex flex-col lg:flex-row gap-0 lg:gap-4 items-center justify-center w-full max-w-7xl mx-auto px-4">
+    <div className="w-full space-y-16 lg:space-y-24">
+      {/* First Row: Card Stack + Image */}
+      <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center justify-center w-full max-w-7xl mx-auto px-4">
         {/* First Card Stack */}
         <div
-          className="relative w-full flex items-center justify-center -mb-24 lg:mb-0"
+          className="relative w-full lg:w-1/2 flex items-center justify-center"
           style={{ height: '500px' }}
         >
           <CardSwap
@@ -26,7 +26,6 @@ function CardSwapDemo() {
             pauseOnHover={true}
             easing="power"
             visibleCards={4}
-            syncGroup="services"
           >
             {/* Wealth Management */}
             <Card
@@ -102,9 +101,30 @@ function CardSwapDemo() {
           </CardSwap>
         </div>
 
+        {/* Image 1 */}
+        <div className="w-full lg:w-1/2 flex items-center justify-center">
+          <img
+            src="/images/image-1.webp"
+            alt="Financial Planning"
+            className="w-full h-auto rounded-3xl shadow-2xl object-cover max-w-2xl"
+          />
+        </div>
+      </div>
+
+      {/* Second Row: Image + Card Stack */}
+      <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center justify-center w-full max-w-7xl mx-auto px-4">
+        {/* Image 2 */}
+        <div className="w-full lg:w-1/2 flex items-center justify-center order-2 lg:order-1">
+          <img
+            src="/images/image-2.webp"
+            alt="Financial Advisory"
+            className="w-full h-auto rounded-3xl shadow-2xl object-cover max-w-2xl"
+          />
+        </div>
+
         {/* Second Card Stack */}
         <div
-          className="relative w-full flex items-center justify-center"
+          className="relative w-full lg:w-1/2 flex items-center justify-center order-1 lg:order-2"
           style={{ height: '500px' }}
         >
           <CardSwap
@@ -116,7 +136,6 @@ function CardSwapDemo() {
             pauseOnHover={true}
             easing="power"
             visibleCards={4}
-            syncGroup="services"
           >
             {/* Retirement Planning */}
             <Card
