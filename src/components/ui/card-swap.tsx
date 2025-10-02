@@ -31,6 +31,7 @@ interface CardSwapProps {
   skewAmount?: number;
   easing?: 'elastic' | 'power';
   visibleCards?: number;
+  syncGroup?: string;
 }
 
 interface Slot {
@@ -101,6 +102,7 @@ const CardSwap = ({
   skewAmount = 6,
   easing = 'elastic',
   visibleCards = 4,
+  syncGroup,
   children,
 }: CardSwapProps) => {
   const config = useMemo(
@@ -215,9 +217,29 @@ const CardSwap = ({
       });
     };
 
+    // Sync mechanism using custom events
+    const handleSyncSwap = () => {
+      swap();
+    };
+
+    if (syncGroup) {
+      window.addEventListener(`cardswap-${syncGroup}`, handleSyncSwap);
+    }
+
     // Initial animation call
-    const timeoutId = setTimeout(swap, 100);
-    intervalRef.current = window.setInterval(swap, delay);
+    const timeoutId = setTimeout(() => {
+      swap();
+      if (syncGroup) {
+        window.dispatchEvent(new CustomEvent(`cardswap-${syncGroup}`));
+      }
+    }, 100);
+
+    intervalRef.current = window.setInterval(() => {
+      swap();
+      if (syncGroup) {
+        window.dispatchEvent(new CustomEvent(`cardswap-${syncGroup}`));
+      }
+    }, delay);
 
     const node = containerRef.current;
     if (pauseOnHover && node) {
@@ -227,23 +249,34 @@ const CardSwap = ({
       };
       const resume = () => {
         tlRef.current?.play();
-        intervalRef.current = window.setInterval(swap, delay);
+        intervalRef.current = window.setInterval(() => {
+          swap();
+          if (syncGroup) {
+            window.dispatchEvent(new CustomEvent(`cardswap-${syncGroup}`));
+          }
+        }, delay);
       };
       node.addEventListener('mouseenter', pause);
       node.addEventListener('mouseleave', resume);
       return () => {
         node.removeEventListener('mouseenter', pause);
         node.removeEventListener('mouseleave', resume);
+        if (syncGroup) {
+          window.removeEventListener(`cardswap-${syncGroup}`, handleSyncSwap);
+        }
         clearTimeout(timeoutId);
         clearInterval(intervalRef.current);
       };
     }
 
     return () => {
+      if (syncGroup) {
+        window.removeEventListener(`cardswap-${syncGroup}`, handleSyncSwap);
+      }
       clearTimeout(timeoutId);
       clearInterval(intervalRef.current);
     };
-  }, [cardDistance, verticalDistance, delay, pauseOnHover, skewAmount, config, refs, visibleCards]);
+  }, [cardDistance, verticalDistance, delay, pauseOnHover, skewAmount, config, refs, visibleCards, syncGroup]);
 
   const renderedChildren = childArr.map((child, i) =>
     isValidElement(child)
@@ -265,9 +298,10 @@ const CardSwap = ({
       className="relative mx-auto perspective-[900px] overflow-visible
       transform
       lg:scale-100
-      md:scale-[0.8]
-      sm:scale-[0.65]
-      max-sm:scale-[0.5]"
+      md:scale-[0.85]
+      sm:scale-[0.7]
+      max-sm:scale-[0.55]
+      origin-center"
       style={{ width, height }}
     >
       {renderedChildren}

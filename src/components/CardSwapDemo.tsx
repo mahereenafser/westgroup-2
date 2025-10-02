@@ -9,12 +9,12 @@ function CardSwapDemo() {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full flex items-center justify-center">
       {/* Desktop: Side by side, Mobile: Stacked vertically centered */}
-      <div className="flex flex-col lg:flex-row gap-12 lg:gap-8 items-center justify-center w-full px-4">
+      <div className="flex flex-col lg:flex-row gap-12 lg:gap-8 items-center justify-center w-full max-w-7xl mx-auto px-4">
         {/* First Card Stack */}
         <div
-          className="relative w-full max-w-4xl mx-auto lg:mx-0"
+          className="relative w-full flex items-center justify-center"
           style={{ height: '500px' }}
         >
           <CardSwap
@@ -26,6 +26,7 @@ function CardSwapDemo() {
             pauseOnHover={true}
             easing="power"
             visibleCards={4}
+            syncGroup="services"
           >
             {/* Wealth Management */}
             <Card
@@ -103,7 +104,7 @@ function CardSwapDemo() {
 
         {/* Second Card Stack */}
         <div
-          className="relative w-full max-w-4xl mx-auto lg:mx-0"
+          className="relative w-full flex items-center justify-center"
           style={{ height: '500px' }}
         >
           <CardSwap
@@ -115,6 +116,7 @@ function CardSwapDemo() {
             pauseOnHover={true}
             easing="power"
             visibleCards={4}
+            syncGroup="services"
           >
             {/* Retirement Planning */}
             <Card
