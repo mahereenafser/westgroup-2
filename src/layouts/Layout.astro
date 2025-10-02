@@ -1,0 +1,548 @@
+---
+import SEO from '../components/SEO.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import PerformanceMonitor from '../components/PerformanceMonitor.astro';
+import '../styles/global.css';
+
+export interface Props {
+  title: string;
+  description?: string;
+  keywords?: string;
+  ogImage?: string;
+  canonical?: string;
+}
+
+const { 
+  title, 
+  description = "WestGroup Financial Management - Expert fee-only financial planning, wealth management, and fiduciary advisory services in BC. Tax-efficient strategies for high-net-worth individuals.",
+  keywords = "fee-only financial planning, fiduciary financial advisor, wealth management, retirement planning, tax-efficient investments, estate planning, business succession planning",
+  ogImage = "/images/og-image.webp",
+  canonical
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" style="background: #000000 !important; background-color: #000000 !important; color: #f8fafb; overscroll-behavior: none; -webkit-overscroll-behavior: none; min-height: 100%; height: 100%;">
+  <head>
+    <SEO 
+      title={title}
+      description={description}
+      keywords={keywords}
+      ogImage={ogImage}
+      canonical={canonical}
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Mobile browser theme and status bar colors - Safari specific -->
+    <meta name="theme-color" content="#000000" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    
+    <!-- Preload critical fonts and resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="/images/logo.webp" as="image" type="image/webp">
+    
+    <!-- Load fonts asynchronously -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=DM+Sans:wght@300;400;500&family=Source+Sans+Pro:wght@300;400;500&display=swap" as="style">
+    <script is:inline>
+      (function() {
+        const fontLink = document.createElement('link');
+        fontLink.rel = 'stylesheet';
+        fontLink.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=DM+Sans:wght@300;400;500&family=Source+Sans+Pro:wght@300;400;500&display=swap';
+        document.head.appendChild(fontLink);
+      })();
+    </script>
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=DM+Sans:wght@300;400;500&family=Source+Sans+Pro:wght@300;400;500&display=swap"></noscript>
+    
+    <!-- Critical CSS for above-the-fold content - optimized for mobile -->
+    <style>
+      /* Force black background ONLY on overflow areas to prevent overscroll yellow */
+      *,*::before,*::after{box-sizing:border-box}
+      html{
+        background:#000000 !important;
+        background-color:#000000 !important;
+        color:#f8fafb;
+        overscroll-behavior:none;
+        overscroll-behavior-y:none;
+        overscroll-behavior-x:none;
+        -webkit-overscroll-behavior:none;
+        -webkit-overscroll-behavior-y:none;
+        -webkit-overscroll-behavior-x:none;
+        scroll-behavior:smooth;
+        min-height:100%;
+        height:100%
+      }
+      body{
+        background:#0a0e12 !important;
+        background-color:#0a0e12 !important;
+        color:#f8fafb;
+        font-family:'Inter','DM Sans','Source Sans Pro',system-ui,-apple-system,sans-serif;
+        font-weight:300;
+        letter-spacing:-0.025em;
+        -webkit-font-smoothing:antialiased;
+        overscroll-behavior:none;
+        overscroll-behavior-y:none;
+        overscroll-behavior-x:none;
+        -webkit-overscroll-behavior:none;
+        -webkit-overscroll-behavior-y:none;
+        -webkit-overscroll-behavior-x:none;
+        overflow-x:hidden;
+        min-height:100vh;
+        margin:0;
+        padding:0
+      }
+      #root,main,.astro-page{
+        background:#0a0e12 !important;
+        min-height:100vh;
+      }
+      
+      /* Thin, clean font for entire website */
+      h1,h2,h3,h4,h5,h6{font-weight:200;letter-spacing:-0.025em}
+      p{font-weight:300;letter-spacing:-0.01em}
+      .hero-section{min-height:100vh;padding-top:8rem}
+      .btn-primary{background:linear-gradient(135deg,#3ea08c 0%,#5abaa7 50%,#eab308 100%);color:#0a0e12;padding:0.75rem 1.5rem;border-radius:0.75rem;font-weight:500;transition:transform 0.2s ease;transform:translateZ(0)}
+      .btn-secondary{border:2px solid rgba(58,160,140,0.4);color:#5abaa7;padding:0.75rem 1.5rem;border-radius:0.75rem;font-weight:500;background:rgba(58,160,140,0.1);backdrop-filter:blur(4px)}
+      .gradient-text{background:linear-gradient(135deg,#5abaa7 0%,#eab308 100%);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+      .glass-effect{background:rgba(15,20,25,0.4);backdrop-filter:blur(16px);border:1px solid rgba(58,160,140,0.2)}
+      header{background:rgba(10,14,18,0.95);backdrop-filter:blur(8px)}
+      .container-custom{max-width:80rem;margin:0 auto}
+      .section-padding{padding:5rem 1rem}
+      img{height:auto;max-width:100%;image-rendering:optimizeQuality}
+      *{-webkit-tap-highlight-color:transparent}
+      @media (max-width:768px){.hero-section{padding-top:6rem}.section-padding{padding:3rem 1rem}.btn-primary,.btn-secondary{min-height:44px;min-width:44px}}
+      @media (prefers-reduced-motion:reduce){*{animation-duration:0.01ms!important;transition-duration:0.01ms!important}}
+      
+      /* Clean Dark Scrollbar */
+      ::-webkit-scrollbar{width:8px;background:rgba(15,20,25,0.8)}
+      ::-webkit-scrollbar-track{background:rgba(15,20,25,0.8)}
+      ::-webkit-scrollbar-thumb{
+        background:linear-gradient(135deg,rgba(58,160,140,0.7) 0%,rgba(234,179,8,0.7) 100%);
+        border-radius:4px;
+        border:none;
+        transition:all 0.3s ease;
+      }
+      ::-webkit-scrollbar-thumb:hover{
+        background:linear-gradient(135deg,rgba(58,160,140,0.9) 0%,rgba(234,179,8,0.9) 100%);
+      }
+      ::-webkit-scrollbar-corner{background:rgba(15,20,25,0.8)}
+      ::-webkit-scrollbar-button{display:none}
+      
+      /* Firefox */
+      *{scrollbar-width:thin;scrollbar-color:rgba(58,160,140,0.7) rgba(15,20,25,0.8)}
+      
+      /* Aggressive iOS overscroll fix - Method 1: Viewport constraint */
+      html{
+        position:relative;
+        overflow-x:hidden;
+        -webkit-text-size-adjust:100%;
+        background:#0a0e12 !important;
+        background-color:#0a0e12 !important;
+        background-attachment:fixed !important
+      }
+      body{
+        position:relative;
+        overflow-x:hidden;
+        background:#0a0e12 !important;
+        background-color:#0a0e12 !important;
+        background-attachment:fixed !important;
+        -webkit-background-size:cover !important;
+        background-size:cover !important
+      }
+      
+      /* iOS Safari specific fixes */
+      @supports (-webkit-touch-callout: none) {
+        html{
+          background:#0a0e12 !important;
+          background-color:#0a0e12 !important;
+          background-image:none !important;
+          background-attachment:fixed !important
+        }
+        body{
+          background:#0a0e12 !important;
+          background-color:#0a0e12 !important;
+          background-image:none !important;
+          background-attachment:fixed !important;
+          min-height:100vh;
+          min-height:-webkit-fill-available
+        }
+        /* Create pseudo-element to fill overscroll areas */
+        body::before{
+          content:'';
+          position:fixed;
+          top:-100vh;
+          left:0;
+          right:0;
+          bottom:-100vh;
+          background:#0a0e12 !important;
+          z-index:-9999
+        }
+        body::after{
+          content:'';
+          position:fixed;
+          top:0;
+          left:0;
+          right:0;
+          bottom:0;
+          background:#0a0e12 !important;
+          z-index:-9998;
+          pointer-events:none
+        }
+      }
+      
+      /* iPhone specific viewport handling with safe areas */
+      @media only screen and (device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) {
+        /* iPhone 14 Pro specific with Dynamic Island coverage */
+        html,body{
+          background:#000000 !important;
+          background-color:#000000 !important;
+          background-attachment:fixed !important;
+          overscroll-behavior:none !important;
+          -webkit-overscroll-behavior:none !important
+        }
+
+        /* Cover safe areas including Dynamic Island */
+        html::before{
+          content:'';
+          position:fixed;
+          top:-200px;
+          left:-50px;
+          right:-50px;
+          height:250px;
+          background:#000000 !important;
+          z-index:-10000;
+          pointer-events:none
+        }
+
+        /* Ensure header covers safe area */
+        header{
+          padding-top:env(safe-area-inset-top);
+          background:#0a0e12 !important;
+          background-color:rgba(10,14,18,0.95) !important
+        }
+      }
+      
+      /* Universal iPhone safe area fixes */
+      @supports (-webkit-touch-callout: none) {
+        html{
+          background:#000000 !important;
+          background-color:#000000 !important;
+          padding-top:0;
+          margin-top:0
+        }
+
+        body{
+          background:#0a0e12 !important;
+          background-color:#0a0e12 !important
+        }
+      }
+    </style>
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": ["FinancialService", "LocalBusiness"],
+        "name": "WestGroup Financial Management Inc.",
+        "alternateName": "WestGroup Financial",
+        "description": "Fee-only fiduciary financial planning and wealth management services for high-net-worth individuals and families in British Columbia. Comprehensive retirement planning, tax-efficient investment strategies, and estate planning.",
+        "url": "https://westgroupfinancial.com",
+        "telephone": "+1-604-588-9688",
+        "email": "info@westgroupfinancial.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "123 Financial District",
+          "addressLocality": "Surrey",
+          "addressRegion": "BC",
+          "postalCode": "V3S 0A1",
+          "addressCountry": "CA"
+        },
+        "serviceArea": {
+          "@type": "GeoCircle",
+          "geoMidpoint": {
+            "@type": "GeoCoordinates",
+            "latitude": 49.1913,
+            "longitude": -122.8490
+          },
+          "geoRadius": "100000"
+        },
+        "priceRange": "$$$$",
+        "openingHours": "Mo-Fr 08:00-17:00",
+        "numberOfEmployees": "15-20",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Financial Planning Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Comprehensive Wealth Management",
+                "description": "Sophisticated investment portfolio management with tax-efficient strategies designed to preserve and grow wealth across market cycles.",
+                "provider": {
+                  "@type": "FinancialService",
+                  "name": "WestGroup Financial Management Inc."
+                }
+              },
+              "priceSpecification": {
+                "@type": "PriceSpecification",
+                "priceCurrency": "CAD",
+                "price": "0.75-1.25% annually"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Retirement Income Planning",
+                "description": "Strategic retirement planning to ensure you maintain your lifestyle while minimizing tax burden throughout your retirement years.",
+                "provider": {
+                  "@type": "FinancialService",
+                  "name": "WestGroup Financial Management Inc."
+                }
+              },
+              "priceSpecification": {
+                "@type": "PriceSpecification",
+                "priceCurrency": "CAD",
+                "price": "Custom quote based on complexity"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Tax-Efficient Investment Strategies",
+                "description": "Advanced tax planning and optimization strategies to minimize your tax burden while maximizing after-tax investment returns.",
+                "provider": {
+                  "@type": "FinancialService",
+                  "name": "WestGroup Financial Management Inc."
+                }
+              },
+              "priceSpecification": {
+                "@type": "PriceSpecification",
+                "priceCurrency": "CAD",
+                "price": "Included with wealth management services"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Estate Planning Services",
+                "description": "Comprehensive estate planning to protect your legacy and ensure efficient wealth transfer to future generations.",
+                "provider": {
+                  "@type": "FinancialService",
+                  "name": "WestGroup Financial Management Inc."
+                }
+              },
+              "priceSpecification": {
+                "@type": "PriceSpecification",
+                "priceCurrency": "CAD",
+                "price": "$2,500 - $15,000 per plan"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Business Succession Planning",
+                "description": "Strategic planning for business owners to ensure smooth transitions and maximize value during business succession.",
+                "provider": {
+                  "@type": "FinancialService",
+                  "name": "WestGroup Financial Management Inc."
+                }
+              },
+              "priceSpecification": {
+                "@type": "PriceSpecification",
+                "priceCurrency": "CAD",
+                "price": "$5,000 - $25,000 per engagement"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Free Initial Consultation",
+                "description": "Complimentary 60-minute consultation to discuss your financial goals and determine how we can help.",
+                "provider": {
+                  "@type": "FinancialService",
+                  "name": "WestGroup Financial Management Inc."
+                }
+              },
+              "priceSpecification": {
+                "@type": "PriceSpecification",
+                "priceCurrency": "CAD",
+                "price": "0"
+              }
+            }
+          ]
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "147",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/company/westgroup-financial",
+          "https://www.facebook.com/westgroupfinancial",
+          "https://twitter.com/westgroupfinancial"
+        ],
+        "paymentAccepted": ["Cash", "Check", "Bank Transfer", "Wire Transfer"],
+        "currenciesAccepted": "CAD",
+        "areaServed": [
+          {
+            "@type": "State",
+            "name": "British Columbia",
+            "alternateName": "BC"
+          }
+        ],
+        "knowsAbout": [
+          "Financial Planning",
+          "Wealth Management",
+          "Retirement Planning",
+          "Tax Planning",
+          "Estate Planning",
+          "Investment Management",
+          "Fiduciary Services",
+          "Fee-Only Advisory"
+        ]
+      }
+    </script>
+  </head>
+  <body class="overflow-x-hidden" style="background: #0a0e12 !important; background-color: #0a0e12 !important; color: #f8fafb; overscroll-behavior: none; -webkit-overscroll-behavior: none; margin: 0; padding: 0; min-height: 100vh;">
+    <Header />
+    <main class="min-h-screen" style="background: #0a0e12 !important; background-color: #0a0e12 !important;">
+      <slot />
+    </main>
+    <Footer />
+    <PerformanceMonitor />
+    
+    <!-- Background Effects (disabled on mobile for performance) -->
+    <div class="hidden md:block fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-500/3 rounded-full blur-3xl animate-float"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent-500/3 rounded-full blur-3xl animate-float" style="animation-delay: -3s;"></div>
+      <div class="absolute top-3/4 left-1/2 w-64 h-64 bg-primary-400/3 rounded-full blur-3xl animate-float" style="animation-delay: -1.5s;"></div>
+    </div>
+
+    <script is:inline>
+      // iOS overscroll background fix
+      (function() {
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        if (isIOS) {
+          // Force background color on viewport elements  
+          document.documentElement.style.setProperty('background-color', '#000000', 'important');
+          document.documentElement.style.setProperty('background', '#000000', 'important');
+          document.body.style.setProperty('background-color', '#0a0e12', 'important');
+          document.body.style.setProperty('background', '#0a0e12', 'important');
+          
+          // Create overlay elements to cover overscroll areas
+          const createOverlay = (position, extraHeight = '100vh') => {
+            const overlay = document.createElement('div');
+            overlay.style.cssText = `
+              position: fixed;
+              ${position}: -${extraHeight};
+              left: -50px;
+              right: -50px;
+              height: ${extraHeight === '100vh' ? '100vh' : extraHeight};
+              background: #000000 !important;
+              z-index: -9999;
+              pointer-events: none;
+            `;
+            document.body.appendChild(overlay);
+          };
+          
+          // Enhanced top overlay for Dynamic Island area
+          createOverlay('top', '200px');
+          createOverlay('bottom');
+          
+          // Specific Dynamic Island area coverage
+          const dynamicIslandOverlay = document.createElement('div');
+          dynamicIslandOverlay.style.cssText = `
+            position: fixed;
+            top: -150px;
+            left: 0;
+            right: 0;
+            height: 200px;
+            background: #0a0e12 !important;
+            z-index: -10002;
+            pointer-events: none;
+          `;
+          document.body.appendChild(dynamicIslandOverlay);
+          
+          // Additional iOS-specific fixes
+          document.addEventListener('touchstart', function() {
+            document.documentElement.style.setProperty('background', '#000000', 'important');
+            document.body.style.setProperty('background', '#0a0e12', 'important');
+          }, { passive: true });
+        }
+      })();
+
+      // Optimized mobile-first JavaScript
+      document.addEventListener('DOMContentLoaded', function() {
+        // Check for reduced motion preference
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        
+        // Smooth scrolling for anchor links (desktop only)
+        if (!prefersReducedMotion) {
+          const links = document.querySelectorAll('a[href^="#"]');
+          links.forEach(link => {
+            link.addEventListener('click', function(e) {
+              e.preventDefault();
+              const target = document.querySelector(this.getAttribute('href'));
+              if (target) {
+                target.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }
+            });
+          });
+        }
+
+        // Lightweight intersection observer for scroll animations
+        if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('animate-fade-in');
+                observer.unobserve(entry.target);
+              }
+            });
+          }, {
+            threshold: 0.1,
+            rootMargin: '50px'
+          });
+
+          // Observe elements with lazy loading
+          setTimeout(() => {
+            document.querySelectorAll('.observe-scroll').forEach(el => {
+              observer.observe(el);
+            });
+          }, 100);
+        }
+
+        // Touch-optimized button interactions (mobile only)
+        const isTouchDevice = 'ontouchstart' in window;
+        if (isTouchDevice) {
+          const buttons = document.querySelectorAll('button, .btn-primary, .btn-secondary, .btn-accent');
+          buttons.forEach(button => {
+            button.addEventListener('touchstart', function() {
+              this.style.transform = 'scale(0.98)';
+            }, { passive: true });
+            
+            button.addEventListener('touchend', function() {
+              setTimeout(() => {
+                this.style.transform = 'scale(1)';
+              }, 100);
+            }, { passive: true });
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

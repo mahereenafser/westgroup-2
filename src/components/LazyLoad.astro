@@ -1,0 +1,76 @@
+---
+export interface Props {
+  class?: string;
+  threshold?: number;
+  rootMargin?: string;
+}
+
+const { 
+  class: className = 'observe-scroll',
+  threshold = 0.1,
+  rootMargin = '50px'
+} = Astro.props;
+---
+
+<div 
+  class={`${className} opacity-0 transform translate-y-4`} 
+  data-lazy-load
+  data-threshold={threshold}
+  data-root-margin={rootMargin}
+>
+  <slot />
+</div>
+
+<script>
+  // Optimized lazy loading with Intersection Observer
+  function initLazyLoad() {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    if (!('IntersectionObserver' in window)) {
+      // Fallback for older browsers
+      document.querySelectorAll('[data-lazy-load]').forEach(el => {
+        el.classList.add('opacity-100', 'translate-y-0');
+        el.classList.remove('opacity-0', 'translate-y-4');
+      });
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const element = entry.target;
+          
+          if (prefersReducedMotion) {
+            // Instant reveal for reduced motion users
+            element.classList.add('opacity-100', 'translate-y-0');
+            element.classList.remove('opacity-0', 'translate-y-4');
+          } else {
+            // Smooth animation for others
+            const htmlElement = element as HTMLElement;
+            htmlElement.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            htmlElement.classList.add('opacity-100', 'translate-y-0');
+            htmlElement.classList.remove('opacity-0', 'translate-y-4');
+          }
+          
+          // Stop observing once animated
+          observer.unobserve(element);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '50px'
+    });
+
+    // Start observing elements
+    document.querySelectorAll('[data-lazy-load]').forEach(el => {
+      observer.observe(el);
+    });
+  }
+
+  // Initialize on DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLazyLoad);
+  } else {
+    initLazyLoad();
+  }
+</script>

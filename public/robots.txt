@@ -1,0 +1,35 @@
+User-agent: *
+Allow: /
+
+# Allow crawling of important pages
+Allow: /about
+Allow: /services
+Allow: /contact
+Allow: /calculator
+Allow: /services/*
+
+# Block crawling of admin and temporary files
+Disallow: /admin/
+Disallow: /temp/
+Disallow: /_astro/
+Disallow: /api/
+Disallow: /private/
+
+# Block specific file types that shouldn't be indexed
+Disallow: /*.pdf$
+Disallow: /*.doc$
+Disallow: /*.docx$
+Disallow: /*.xls$
+Disallow: /*.xlsx$
+
+# Allow search engines to access CSS and JS files for better rendering
+Allow: /styles/
+Allow: /scripts/
+Allow: /*.css
+Allow: /*.js
+
+# Sitemap location
+Sitemap: https://westgroupfinancial.com/sitemap.xml
+
+# Crawl delay (optional - helps prevent server overload)
+Crawl-delay: 1

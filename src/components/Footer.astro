@@ -1,0 +1,160 @@
+---
+import ResponsiveImage from './ResponsiveImage.astro';
+---
+
+<footer class="bg-black border-t border-gray-800">
+  <div class="container-custom mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <!-- Main Footer Content -->
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+      <!-- Company Info -->
+      <div class="lg:col-span-1">
+        <div class="flex items-center space-x-3 mb-6">
+          <ResponsiveImage 
+            src="/images/logo.webp" 
+            alt="WestGroup Financial" 
+            class="h-10 w-auto" 
+            loading="lazy" 
+          />
+        </div>
+        <p class="text-gray-300 mb-6 leading-relaxed">
+          Your trusted fee-only fiduciary financial advisors serving over 3000+ clients with comprehensive wealth management, 
+          tax-efficient investment strategies, and retirement income planning for high-net-worth individuals and families across BC.
+        </p>
+        
+        <!-- Credentials & Insurance -->
+        <div class="space-y-2 mb-6">
+          <p class="text-sm text-gray-400"><strong class="text-gray-300">Professional Designations:</strong></p>
+          <p class="text-xs text-gray-400">CFP®, CFA, PFP, FMA</p>
+          <p class="text-sm text-gray-400 mt-3"><strong class="text-gray-300">Insurance & Protection:</strong></p>
+          <p class="text-xs text-gray-400">Professional Liability: $5M • CIPF Coverage • Bonded & Licensed</p>
+        </div>
+
+        <!-- Social Media -->
+        <div class="flex space-x-4">
+          <a href="#" class="text-gray-400 hover:text-primary-400 transition-colors duration-300" aria-label="LinkedIn">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-primary-400 transition-colors duration-300" aria-label="Facebook">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-primary-400 transition-colors duration-300" aria-label="Twitter">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Three Column Layout for Services, Resources, Contact -->
+      <div class="lg:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Services -->
+        <div>
+          <h3 class="text-lg font-semibold text-primary-400 mb-4">Services</h3>
+          <ul class="space-y-3">
+            <li><a href="/investment-management" class="text-gray-300 hover:text-primary-400 transition-colors duration-300">Investment Management</a></li>
+            <li><a href="/retirement-planning" class="text-gray-300 hover:text-primary-400 transition-colors duration-300">Retirement Planning</a></li>
+            <li><a href="/fee-only-financial-advisor" class="text-gray-300 hover:text-primary-400 transition-colors duration-300">Fee-Only Advisory</a></li>
+            <li><a href="/financial-advisor-fees-vancouver" class="text-gray-300 hover:text-primary-400 transition-colors duration-300">Fee Comparison</a></li>
+            <li><a href="/services" class="text-gray-300 hover:text-primary-400 transition-colors duration-300">All Services</a></li>
+          </ul>
+        </div>
+
+        <!-- Resources -->
+        <div>
+          <h3 class="text-lg font-semibold text-primary-400 mb-4">Resources</h3>
+          <ul class="space-y-3">
+            <li><a href="/calculator" class="text-gray-300 hover:text-primary-400 transition-colors duration-300">Financial Calculator</a></li>
+            <li><a href="/emergency-financial-consultation" class="text-gray-300 hover:text-primary-400 transition-colors duration-300">Emergency Help</a></li>
+            <li><a href="/financial-problems-solutions" class="text-gray-300 hover:text-primary-400 transition-colors duration-300">Problem Solutions</a></li>
+            <li><a href="/hire-financial-advisor-vancouver" class="text-gray-300 hover:text-primary-400 transition-colors duration-300">Hiring Guide</a></li>
+            <li><a href="/about" class="text-gray-300 hover:text-primary-400 transition-colors duration-300">About Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h3 class="text-lg font-semibold text-primary-400 mb-4">Contact</h3>
+          <div class="space-y-3 text-gray-300">
+            <div class="flex items-center space-x-3">
+              <svg class="w-5 h-5 text-accent-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+              </svg>
+              <span>(604) 588-9688</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <svg class="w-5 h-5 text-accent-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+              </svg>
+              <span>info@westgroupfinancial.com</span>
+            </div>
+            <div class="flex items-start space-x-3">
+              <svg class="w-5 h-5 text-accent-400 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+              <div>
+                <div>Suite #210 – 2411 160 St</div>
+                <div>South Surrey, BC, V3Z 0C8</div>
+              </div>
+            </div>
+            <div class="flex items-center space-x-3">
+              <svg class="w-5 h-5 text-accent-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span>Mon-Fri: 8:00 AM - 5:00 PM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+      <div class="text-gray-400 text-sm mb-4 md:mb-0">
+        © 2025 WestGroup Financial Management Inc. All rights reserved.
+      </div>
+      <div class="flex space-x-6 text-sm">
+        <a href="/privacy" class="text-gray-400 hover:text-primary-400 transition-colors duration-300">Privacy Policy</a>
+        <a href="/terms" class="text-gray-400 hover:text-primary-400 transition-colors duration-300">Terms of Service</a>
+        <a href="/disclosure" class="text-gray-400 hover:text-primary-400 transition-colors duration-300">Disclosure</a>
+      </div>
+    </div>
+
+    <!-- Regulatory Information -->
+    <div class="mt-8 pt-6 border-t border-gray-700">
+      <div class="max-w-6xl mx-auto">
+        <p class="text-xs text-gray-500 leading-relaxed">
+          <strong class="text-gray-400">WestGroup Financial - Your Trusted Vancouver Financial Advisors</strong><br>
+          WestGroup Financial Management Inc. is a registered investment advisor licensed in British Columbia. 
+          Securities offered through licensed representatives. Investment advisory services provided as a fiduciary. 
+          Past performance does not guarantee future results. All investments involve risk including potential loss of principal.
+          <br><br>
+          <strong class="text-gray-400">Serving:</strong> Vancouver, Surrey, Burnaby, Richmond, North Vancouver, West Vancouver, Coquitlam, Langley, Delta, New Westminster, and all of Metro Vancouver and Fraser Valley.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Quick Contact Bar -->
+<div class="fixed bottom-6 right-6 z-40">
+  <div class="flex flex-col space-y-3">
+    <!-- Chat Button -->
+    <button class="bg-gradient-to-r from-accent-600 to-accent-500 text-white p-4 rounded-full shadow-2xl hover:shadow-accent-500/30 transition-all duration-300 transform hover:scale-110 animate-pulse-glow">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+      </svg>
+    </button>
+    
+    <!-- Phone Button -->
+    <a href="tel:+16045889688" class="bg-gradient-to-r from-primary-600 to-primary-500 text-black p-4 rounded-full shadow-2xl hover:shadow-primary-500/30 transition-all duration-300 transform hover:scale-110">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+      </svg>
+    </a>
+  </div>
+</div>

@@ -1,0 +1,166 @@
+---
+// Performance monitoring component for mobile optimization
+---
+
+<script is:inline>
+// Performance monitoring for mobile optimization
+(function() {
+  'use strict';
+  
+  // Only run in production or when explicitly enabled
+  const isMonitoringEnabled = import.meta.env.NODE_ENV === 'production' || 
+                              new URLSearchParams(window.location.search).has('perf-monitor');
+  
+  if (!isMonitoringEnabled) return;
+  
+  // Performance budgets (in milliseconds)
+  const PERFORMANCE_BUDGETS = {
+    FCP: 1800,  // First Contentful Paint
+    LCP: 2500,  // Largest Contentful Paint  
+    FID: 100,   // First Input Delay
+    CLS: 0.1,   // Cumulative Layout Shift
+    TTFB: 600   // Time to First Byte
+  };
+  
+  let performanceData = {};
+  
+  // Monitor Core Web Vitals
+  function monitorWebVitals() {
+    // FCP - First Contentful Paint
+    new PerformanceObserver((entryList) => {
+      const entry = entryList.getEntries()[0];
+      performanceData.FCP = entry.startTime;
+      checkBudget('FCP', entry.startTime);
+    }).observe({ entryTypes: ['paint'] });
+    
+    // LCP - Largest Contentful Paint
+    new PerformanceObserver((entryList) => {
+      const entries = entryList.getEntries();
+      const lastEntry = entries[entries.length - 1];
+      performanceData.LCP = lastEntry.startTime;
+      checkBudget('LCP', lastEntry.startTime);
+    }).observe({ entryTypes: ['largest-contentful-paint'] });
+    
+    // FID - First Input Delay
+    new PerformanceObserver((entryList) => {
+      const entry = entryList.getEntries()[0];
+      performanceData.FID = entry.processingStart - entry.startTime;
+      checkBudget('FID', performanceData.FID);
+    }).observe({ entryTypes: ['first-input'] });
+    
+    // CLS - Cumulative Layout Shift
+    let clsValue = 0;
+    new PerformanceObserver((entryList) => {
+      for (const entry of entryList.getEntries()) {
+        if (!entry.hadRecentInput) {
+          clsValue += entry.value;
+        }
+      }
+      performanceData.CLS = clsValue;
+      checkBudget('CLS', clsValue);
+    }).observe({ entryTypes: ['layout-shift'] });
+  }
+  
+  // Check if metric exceeds budget
+  function checkBudget(metric, value) {
+    const budget = PERFORMANCE_BUDGETS[metric];
+    if (value > budget) {
+      console.warn(`⚠️  Performance Budget Exceeded: ${metric} = ${value.toFixed(2)} (budget: ${budget})`);
+      
+      // Send to analytics in production
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'performance_budget_exceeded', {
+          metric: metric,
+          value: value,
+          budget: budget,
+          device_type: /Mobile|Android|iPhone|iPad/.test(navigator.userAgent) ? 'mobile' : 'desktop'
+        });
+      }
+    }
+  }
+  
+  // Monitor resource loading
+  function monitorResources() {
+    window.addEventListener('load', () => {
+      const navigation = performance.getEntriesByType('navigation')[0];
+      performanceData.TTFB = navigation.responseStart - navigation.requestStart;
+      checkBudget('TTFB', performanceData.TTFB);
+      
+      // Log resource timings for images
+      performance.getEntriesByType('resource').forEach(resource => {
+        if (resource.initiatorType === 'img' && resource.duration > 1000) {
+          console.warn(`🖼️  Slow image loading: ${resource.name} took ${resource.duration.toFixed(2)}ms`);
+        }
+      });
+    });
+  }
+  
+  // Monitor memory usage (if available)
+  function monitorMemory() {
+    if ('memory' in performance) {
+      const checkMemory = () => {
+        const memory = performance.memory;
+        const memoryUsage = (memory.usedJSHeapSize / memory.jsHeapSizeLimit) * 100;
+        
+        if (memoryUsage > 80) {
+          console.warn(`🧠 High memory usage: ${memoryUsage.toFixed(1)}%`);
+        }
+      };
+      
+      // Check memory every 30 seconds
+      setInterval(checkMemory, 30000);
+    }
+  }
+  
+  // Report performance data
+  function reportPerformance() {
+    setTimeout(() => {
+      console.log('📊 Performance Report:', performanceData);
+      
+      // Calculate performance score
+      let score = 100;
+      Object.entries(PERFORMANCE_BUDGETS).forEach(([metric, budget]) => {
+        const value = performanceData[metric];
+        if (value && value > budget) {
+          const penalty = metric === 'CLS' ? (value - budget) * 100 : Math.min(30, (value - budget) / budget * 20);
+          score -= penalty;
+        }
+      });
+      
+      score = Math.max(0, Math.round(score));
+      console.log(`🎯 Performance Score: ${score}/100`);
+      
+      // Visual indicator for development
+      if (score < 80 && !import.meta.env.PROD) {
+        const indicator = document.createElement('div');
+        indicator.style.cssText = `
+          position: fixed;
+          top: 10px;
+          right: 10px;
+          background: ${score < 60 ? '#ef4444' : '#f59e0b'};
+          color: white;
+          padding: 8px 12px;
+          border-radius: 4px;
+          font-family: monospace;
+          font-size: 12px;
+          z-index: 10000;
+          opacity: 0.9;
+        `;
+        indicator.textContent = `Perf: ${score}/100`;
+        document.body.appendChild(indicator);
+        
+        // Remove after 10 seconds
+        setTimeout(() => indicator.remove(), 10000);
+      }
+    }, 5000);
+  }
+  
+  // Initialize monitoring
+  if ('PerformanceObserver' in window) {
+    monitorWebVitals();
+    monitorResources();
+    monitorMemory();
+    reportPerformance();
+  }
+})();
+</script>

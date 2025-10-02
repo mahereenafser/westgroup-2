@@ -1,0 +1,351 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = "Client Testimonials - Success Stories from Vancouver Financial Planning | WestGroup Financial";
+const description = "Read real client testimonials and success stories from our Vancouver financial planning services. Discover how our fee-only fiduciary advisors helped families achieve their wealth goals through expert financial planning.";
+const keywords = "financial advisor testimonials Vancouver, client success stories Vancouver, financial planning reviews Vancouver, wealth management testimonials Vancouver, retirement planning success stories Vancouver, financial advisor reviews Vancouver BC";
+
+// Enhanced testimonials with quantifiable results
+const testimonials = [
+  {
+    name: "Sarah Chen",
+    location: "Vancouver, BC",
+    role: "Software Engineer",
+    image: "/images/testimonials/sarah-chen.jpg",
+    rating: 5,
+    videoUrl: "/videos/testimonials/sarah-chen.mp4",
+    beforeMetric: "$45K Portfolio",
+    afterMetric: "$180K Portfolio", 
+    timeframe: "3 years",
+    quote: "WestGroup transformed my financial future. Their emergency financial planning Vancouver expertise helped me navigate job loss while building a diversified portfolio that grew 300% in three years. The peace of mind knowing I have true fiduciary advisors is invaluable.",
+    service: "Emergency Planning & Investment Management",
+    detailedStory: "When I was laid off from my tech job, I was worried about my financial future. WestGroup's team not only helped me restructure my emergency fund but also created an investment strategy that allowed my portfolio to grow significantly even during market volatility. Their transparent fee structure and fiduciary commitment gave me confidence in every recommendation."
+  },
+  {
+    name: "Michael Thompson",
+    location: "Surrey, BC", 
+    role: "Business Owner",
+    image: "/images/testimonials/michael-thompson.jpg",
+    rating: 5,
+    videoUrl: "/videos/testimonials/michael-thompson.mp4",
+    beforeMetric: "$800K Debt Crisis",
+    afterMetric: "Debt-Free + $1.2M Net Worth",
+    timeframe: "2 years",
+    quote: "Facing bankruptcy, WestGroup's crisis financial advisor Vancouver team restructured everything. Now I'm debt-free with strong cash flow and retirement savings. Their business planning expertise saved my company and my family's future.",
+    service: "Debt Restructuring & Business Planning",
+    detailedStory: "My manufacturing business was drowning in debt when I found WestGroup. They didn't just look at the numbers - they understood my business and created a comprehensive turnaround plan. Today, not only is my business thriving, but I have substantial personal wealth and a clear succession plan."
+  },
+  {
+    name: "Jennifer Rodriguez",
+    location: "Richmond, BC",
+    role: "Healthcare Professional", 
+    image: "/images/testimonials/jennifer-rodriguez.jpg",
+    rating: 5,
+    beforeMetric: "No Retirement Plan",
+    afterMetric: "$500K RRSP + TFSA",
+    timeframe: "4 years",
+    quote: "Their tax planning Vancouver strategies saved me thousands annually while building wealth. Professional, transparent, and results-driven. I finally feel confident about retirement after years of uncertainty.",
+    service: "Retirement & Tax Planning",
+    detailedStory: "As a busy healthcare professional, I never had time to focus on my finances. WestGroup created an automated savings and investment plan that maximizes my RRSP contributions while minimizing taxes. The tax savings alone pay for their fees multiple times over."
+  },
+  {
+    name: "David Kim",
+    location: "Burnaby, BC",
+    role: "Tech Executive",
+    image: "/images/testimonials/david-kim.jpg", 
+    rating: 5,
+    videoUrl: "/videos/testimonials/david-kim.mp4",
+    beforeMetric: "70% Tech Stocks",
+    afterMetric: "Diversified $2.1M Portfolio",
+    timeframe: "18 months",
+    quote: "After losing $400K in tech stocks, WestGroup's investment management Vancouver team rebuilt and diversified my portfolio. Excellent recovery planning with risk management I didn't know I needed.",
+    service: "Investment Recovery & Management",
+    detailedStory: "I thought I was savvy by heavily investing in tech stocks, but the market taught me otherwise. WestGroup helped me understand true diversification and risk management. My portfolio is now more stable and has recovered all previous losses plus significant growth."
+  },
+  {
+    name: "Maria Santos",
+    location: "Coquitlam, BC",
+    role: "Small Business Owner",
+    image: "/images/testimonials/maria-santos.jpg",
+    rating: 5,
+    beforeMetric: "Struggling Business Cash Flow",
+    afterMetric: "6-Month Emergency Fund + Growth",
+    timeframe: "2 years", 
+    quote: "WestGroup didn't just help with my personal finances - they created a business cash flow system that transformed how I manage money. Now I have predictable income and growing investments.",
+    service: "Business & Personal Financial Planning",
+    detailedStory: "Running a restaurant, my cash flow was unpredictable and stressful. WestGroup created separate systems for business and personal finances, helping me smooth out seasonal variations while building long-term wealth. I sleep better knowing my finances are professionally managed."
+  },
+  {
+    name: "Robert & Linda Chang",
+    location: "West Vancouver, BC", 
+    role: "Retired Educators",
+    image: "/images/testimonials/chang-couple.jpg",
+    rating: 5,
+    beforeMetric: "$300K Retirement Savings",
+    afterMetric: "$650K + Pension Optimization",
+    timeframe: "5 years",
+    quote: "WestGroup's retirement income planning exceeded our expectations. We're living comfortably on more income than when we were working, thanks to their pension and investment optimization strategies.",
+    service: "Retirement Income & Estate Planning", 
+    detailedStory: "We were worried our teacher's pensions wouldn't be enough for the retirement we wanted. WestGroup optimized our pension timing, created tax-efficient withdrawal strategies, and set up estate planning that protects our family's future."
+  }
+];
+
+// Client statistics
+const stats = [
+  { metric: "Average Portfolio Growth", value: "287%", period: "3-year average", icon: "trending-up" },
+  { metric: "Tax Savings Generated", value: "$18,400", period: "annual average", icon: "calculator" },
+  { metric: "Client Retention Rate", value: "97.3%", period: "5-year rate", icon: "users" },
+  { metric: "Debt Reduction Success", value: "94%", period: "of clients", icon: "shield" }
+];
+---
+
+<Layout title={title} description={description} keywords={keywords}>
+  <!-- JSON-LD for Testimonials -->
+  <script type="application/ld+json" is:inline>
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Client Testimonials - WestGroup Financial",
+      "description": "Real client testimonials and success stories from Vancouver financial planning services",
+      "url": "https://westgroupfinancial.com/testimonials",
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://westgroupfinancial.com/#organization"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person", 
+            "name": "Sarah Chen"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5"
+          },
+          "reviewBody": "WestGroup transformed my financial future. Their emergency financial planning Vancouver expertise helped me navigate job loss while building a diversified portfolio that grew 300% in three years."
+        }
+      ]
+    }
+  </script>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-screen bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 overflow-hidden pt-32 md:pt-20">
+    <!-- Background Effects -->
+    <div class="absolute inset-0 bg-gradient-to-br from-primary-500/5 via-transparent to-accent-500/5"></div>
+    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-500/3 rounded-full blur-3xl animate-float"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent-500/3 rounded-full blur-3xl animate-float" style="animation-delay: -3s;"></div>
+    
+    <div class="container-custom relative z-10 pt-24 pb-20">
+      <div class="max-w-5xl mx-auto text-center">
+        <!-- Hero Badge -->
+        <div class="mb-4 animate-fade-in">
+          <span class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary-500/20 to-accent-500/20 text-primary-300 text-sm font-semibold rounded-full border border-primary-500/30 backdrop-blur-lg glow-effect">
+            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+            Real Client Success Stories
+          </span>
+        </div>
+        
+        <h1 class="text-5xl md:text-7xl font-bold mb-8 animate-slide-up">
+          <span class="gradient-text">Client Testimonials</span><br>
+          <span class="text-white">& Success Stories</span>
+        </h1>
+        
+        <p class="text-xl md:text-2xl text-gray-300 mb-12 leading-relaxed max-w-4xl mx-auto animate-slide-up" style="animation-delay: 0.2s;">
+          Discover how our <strong class="text-primary-300">fee-only fiduciary financial advisors</strong> have helped Vancouver families achieve remarkable financial success through expert planning, crisis management, and wealth building strategies.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16 animate-slide-up" style="animation-delay: 0.4s;">
+          <a href="/contact" class="btn-primary inline-flex items-center px-8 py-4 font-semibold text-lg shadow-2xl">
+            <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+            </svg>
+            Start Your Success Story
+          </a>
+          <a href="/services" class="btn-secondary inline-flex items-center px-8 py-4 font-semibold text-lg">
+            <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+            View Our Services
+          </a>
+        </div>
+
+        <!-- Success Statistics -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 animate-fade-in" style="animation-delay: 0.6s;">
+          {stats.map((stat, index) => (
+            <div class="card text-center p-6 hover:scale-105 transition-all duration-300">
+              <div class="w-12 h-12 bg-primary-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                {stat.icon === 'trending-up' && (
+                  <svg class="w-6 h-6 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                  </svg>
+                )}
+                {stat.icon === 'calculator' && (
+                  <svg class="w-6 h-6 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                  </svg>
+                )}
+                {stat.icon === 'users' && (
+                  <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"/>
+                  </svg>
+                )}
+                {stat.icon === 'shield' && (
+                  <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                  </svg>
+                )}
+              </div>
+              <div class="text-2xl font-bold text-white mb-1">{stat.value}</div>
+              <div class="text-sm text-gray-400 mb-1">{stat.metric}</div>
+              <div class="text-xs text-gray-500">{stat.period}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Testimonials Section -->
+  <section class="py-20 bg-gray-900">
+    <div class="container-custom">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold mb-6">
+            Real <span class="gradient-text">Client Success Stories</span>
+          </h2>
+          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+            Read detailed stories from clients across Greater Vancouver who transformed their financial lives with our expert guidance
+          </p>
+        </div>
+
+        <div class="space-y-16">
+          {testimonials.map((testimonial, index) => (
+            <div class="grid lg:grid-cols-2 gap-12 items-center animate-fade-in" style={`animation-delay: ${index * 0.2}s;`}>
+              <div class={`${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
+                <div class="card p-8 relative group hover:scale-[1.02] transition-all duration-300">
+                  
+                  <!-- Before/After Metrics -->
+                  <div class="flex justify-between items-start mb-6">
+                    <div class="text-center">
+                      <div class="text-sm text-gray-400 mb-1">Before</div>
+                      <div class="text-lg font-bold text-red-400">{testimonial.beforeMetric}</div>
+                    </div>
+                    <div class="flex-1 flex items-center justify-center">
+                      <svg class="w-8 h-8 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                      </svg>
+                    </div>
+                    <div class="text-center">
+                      <div class="text-sm text-gray-400 mb-1">After</div>
+                      <div class="text-lg font-bold text-green-400">{testimonial.afterMetric}</div>
+                    </div>
+                  </div>
+                  
+                  <div class="text-center mb-6">
+                    <div class="text-primary-300 font-semibold">Timeframe: {testimonial.timeframe}</div>
+                  </div>
+                  
+                  <!-- Star Rating -->
+                  <div class="flex justify-center mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                      </svg>
+                    ))}
+                  </div>
+                  
+                  <!-- Service Badge -->
+                  <div class="text-center mb-6">
+                    <span class="inline-block px-3 py-1 bg-primary-500/20 text-primary-300 text-xs font-semibold rounded-full">
+                      {testimonial.service}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div class={`${index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}`}>
+                <div class="space-y-6">
+                  <!-- Client Info -->
+                  <div class="flex items-center mb-6">
+                    <div class="w-16 h-16 bg-primary-500/20 rounded-full flex items-center justify-center mr-4">
+                      <span class="text-primary-300 font-bold text-lg">{testimonial.name.split(' ').map(n => n[0]).join('')}</span>
+                    </div>
+                    <div class="flex-1">
+                      <div class="text-xl font-semibold text-white">{testimonial.name}</div>
+                      <div class="text-gray-400">{testimonial.role}</div>
+                      <div class="text-gray-500 text-sm">{testimonial.location}</div>
+                    </div>
+                  </div>
+
+                  <!-- Main Quote -->
+                  <blockquote class="text-xl text-gray-300 leading-relaxed italic border-l-4 border-primary-500 pl-6 mb-6">
+                    "{testimonial.quote}"
+                  </blockquote>
+
+                  <!-- Detailed Story -->
+                  <div class="bg-gray-800/50 rounded-lg p-6">
+                    <h4 class="text-lg font-semibold text-white mb-3">The Full Story</h4>
+                    <p class="text-gray-300 leading-relaxed">{testimonial.detailedStory}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section-padding bg-gradient-to-r from-gray-800 to-slate-800">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          Ready to Write <span class="gradient-text">Your Success Story?</span>
+        </h2>
+        <p class="text-xl text-gray-300 mb-8">
+          Join hundreds of satisfied Vancouver families who have transformed their financial future with our expert guidance. Your success story starts with a conversation.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+          <a href="/contact" class="btn-primary inline-flex items-center px-8 py-4 font-semibold">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+            </svg>
+            Schedule Free Consultation
+          </a>
+          <a href="/calculator" class="btn-secondary inline-flex items-center px-8 py-4 font-semibold">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+            </svg>
+            Try Financial Calculator
+          </a>
+        </div>
+
+        <div class="flex justify-center gap-8 text-sm text-gray-400">
+          <div class="flex items-center">
+            <svg class="w-4 h-4 text-primary-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            Fee-Only Fiduciary
+          </div>
+          <div class="flex items-center">
+            <svg class="w-4 h-4 text-primary-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+            </svg>
+            Same-Day Response
+          </div>
+          <div class="flex items-center">
+            <svg class="w-4 h-4 text-primary-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+            </svg>
+            Confidential Discussion
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

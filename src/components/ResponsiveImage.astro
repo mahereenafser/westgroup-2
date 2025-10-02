@@ -1,0 +1,66 @@
+---
+export interface Props {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  sizes?: string;
+  class?: string;
+  loading?: 'lazy' | 'eager';
+  priority?: boolean;
+}
+
+const { 
+  src, 
+  alt, 
+  width, 
+  height, 
+  sizes = '100vw', 
+  class: className = '', 
+  loading = 'lazy',
+  priority = false 
+} = Astro.props;
+
+// Generate WebP version path - only if not already webp
+const webpSrc = src.endsWith('.webp') ? src : src.replace(/\.(jpg|jpeg|png)$/i, '.webp');
+
+// For responsive logos, provide different sizes
+const isLogo = src.includes('logo');
+let srcSet = '';
+let webpSrcSet = '';
+
+if (isLogo) {
+  const logoBase = src.replace(/\.(jpg|jpeg|png|webp)$/i, '');
+  srcSet = `${logoBase}-small.webp 80w, ${logoBase}-medium.webp 120w, ${logoBase}.webp 160w`;
+  webpSrcSet = srcSet;
+}
+---
+
+<picture>
+  {isLogo ? (
+    <source
+      type="image/webp"
+      srcset={webpSrcSet}
+      sizes="(max-width: 640px) 80px, (max-width: 768px) 120px, 160px"
+    />
+  ) : (
+    <source
+      type="image/webp"
+      srcset={webpSrc}
+      sizes={sizes}
+    />
+  )}
+  
+  <img
+    src={src}
+    alt={alt}
+    width={width}
+    height={height}
+    class={className}
+    loading={priority ? 'eager' : loading}
+    srcset={isLogo ? srcSet : undefined}
+    sizes={isLogo ? "(max-width: 640px) 80px, (max-width: 768px) 120px, 160px" : sizes}
+    decoding={priority ? 'sync' : 'async'}
+    fetchpriority={priority ? 'high' : 'auto'}
+  />
+</picture>

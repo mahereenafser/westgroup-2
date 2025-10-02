@@ -1,0 +1,775 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = "Financial Planning Blog - Expert Insights from Vancouver Financial Advisors | WestGroup Financial";
+const description = "Discover expert financial planning insights, emergency financial solutions, investment advice, and wealth management strategies from Vancouver's trusted fiduciary advisors. Get crisis financial guidance and professional retirement planning tips.";
+const keywords = "financial planning blog Vancouver, emergency financial planning Vancouver, investment advice Vancouver, wealth management Vancouver, financial crisis help Vancouver, retirement planning blog Vancouver, tax planning Vancouver, financial advisor blog Surrey BC";
+
+const blogPosts = [
+  {
+    title: "What to Do When You Face Financial Uncertainty",
+    slug: "financial-uncertainty-guide",
+    excerpt: "Navigate through financial uncertainty with expert guidance from Vancouver's trusted financial advisors. Learn crisis management strategies, emergency financial planning, and immediate steps to protect your wealth during challenging times.",
+    publishDate: "2025-01-15",
+    readTime: "8 min read",
+    category: "Emergency Planning",
+    image: "/images/blog/financial-uncertainty.webp",
+    keywords: ["Emergency financial planning Vancouver", "Crisis financial advisor Vancouver", "Urgent financial consultation Vancouver", "Financial uncertainty Vancouver", "Emergency wealth protection Vancouver"]
+  },
+  {
+    title: "Complete Guide to Financial Planning Services in Surrey, BC",
+    slug: "financial-planning-services-surrey-bc",
+    excerpt: "Comprehensive guide to financial planning services available in Surrey, BC. Explore investment management, retirement planning, tax optimization, and wealth management solutions from licensed fiduciary advisors serving Greater Vancouver.",
+    publishDate: "2025-01-12",
+    readTime: "12 min read",
+    category: "Location Guide",
+    image: "/images/blog/surrey-financial-planning.webp",
+    keywords: ["Financial planning Surrey BC", "Investment management Vancouver", "Wealth management Surrey BC", "Financial advisor Surrey BC", "Retirement planning Surrey BC"]
+  },
+  {
+    title: "How Much Does Financial Advisory Service Cost in Surrey, BC?",
+    slug: "financial-advisor-fees-surrey-bc",
+    excerpt: "Transparent breakdown of financial advisory service costs in Surrey, BC. Compare fee-only advisory fees, wealth management pricing, and understand what to expect when hiring a fiduciary financial advisor in Greater Vancouver.",
+    publishDate: "2025-01-10",
+    readTime: "10 min read",
+    category: "Pricing Guide",
+    image: "/images/blog/advisor-fees-surrey.webp",
+    keywords: ["Cost financial planning Vancouver BC", "Financial advisor fees Surrey", "Wealth management fees Vancouver", "Fee-only advisor pricing Surrey", "Financial services pricing Vancouver"]
+  },
+  {
+    title: "Winter Financial Planning: Preparation Guide",
+    slug: "winter-financial-planning-guide",
+    excerpt: "Prepare your finances for the winter season with comprehensive tax planning, budget optimization, and investment rebalancing strategies. Expert guidance from Vancouver financial advisors on year-end planning and RRSP contributions.",
+    publishDate: "2025-01-08",
+    readTime: "9 min read",
+    category: "Seasonal Planning",
+    image: "/images/blog/winter-financial-planning.webp",
+    keywords: ["Tax planning Vancouver", "RRSP planning Vancouver", "Year-end tax strategies Vancouver", "Financial planning Vancouver", "Investment management Vancouver"]
+  },
+  {
+    title: "Emergency Financial Services: What You Need to Know",
+    slug: "emergency-financial-services-guide",
+    excerpt: "Understand emergency financial services available in Vancouver. From urgent debt consolidation to immediate financial assistance, learn about crisis financial solutions and when to seek professional help from fiduciary advisors.",
+    publishDate: "2025-01-05",
+    readTime: "11 min read",
+    category: "Emergency Services",
+    image: "/images/blog/emergency-financial-services.webp",
+    keywords: ["Emergency financial services Vancouver", "Urgent debt consolidation Vancouver BC", "Crisis financial advisor Vancouver", "Emergency investment advice Vancouver", "Immediate financial assistance Vancouver"]
+  }
+];
+
+
+// Review platform badges
+const reviewBadges = [
+  { platform: "Google", rating: 4.9, reviews: 247, badge: "/images/badges/google-5-star.svg" },
+  { platform: "BBB", rating: "A+", reviews: "Accredited", badge: "/images/badges/bbb-a-plus.svg" },
+  { platform: "Yelp", rating: 4.8, reviews: 89, badge: "/images/badges/yelp-5-star.svg" },
+  { platform: "Facebook", rating: 4.9, reviews: 156, badge: "/images/badges/facebook-5-star.svg" }
+];
+
+// Trust badges and certifications
+const trustBadges = [
+  { name: "Licensed Fiduciary", icon: "/images/badges/fiduciary-shield.svg", desc: "Legally bound to act in your best interest" },
+  { name: "CFP Certified", icon: "/images/badges/cfp-certified.svg", desc: "Certified Financial Planner professionals" },
+  { name: "MFDA Registered", icon: "/images/badges/mfda-registered.svg", desc: "Mutual Fund Dealers Association" },
+  { name: "IIROC Approved", icon: "/images/badges/iiroc-approved.svg", desc: "Investment Industry Regulatory Organization" },
+  { name: "Insured & Bonded", icon: "/images/badges/insured-bonded.svg", desc: "$5M professional liability coverage" },
+  { name: "25+ Years Experience", icon: "/images/badges/experience-badge.svg", desc: "Serving Vancouver since 1999" }
+];
+
+// Performance statistics
+const performanceStats = [
+  { metric: "Average Response Time", value: "< 2 hours", icon: "clock", color: "text-green-400" },
+  { metric: "Emergency Response", value: "< 1 hour", icon: "lightning", color: "text-red-400" },
+  { metric: "Client Retention Rate", value: "97.3%", icon: "users", color: "text-blue-400" },
+  { metric: "Portfolio Recovery Success", value: "94.8%", icon: "trending-up", color: "text-primary-400" },
+  { metric: "Tax Savings Average", value: "$12,400/year", icon: "calculator", color: "text-accent-400" },
+  { metric: "Client Satisfaction", value: "4.9/5.0", icon: "star", color: "text-yellow-400" }
+];
+
+// Service areas for map
+const serviceAreas = [
+  { city: "Vancouver", clients: 450, coord: [49.2827, -123.1207] },
+  { city: "Surrey", clients: 320, coord: [49.1913, -122.8490] },
+  { city: "Richmond", clients: 280, coord: [49.1666, -123.1336] },
+  { city: "Burnaby", clients: 220, coord: [49.2488, -122.9805] },
+  { city: "Coquitlam", clients: 180, coord: [49.3847, -122.7583] },
+  { city: "North Vancouver", clients: 160, coord: [49.3163, -123.0755] },
+  { city: "West Vancouver", clients: 140, coord: [49.3289, -123.1624] },
+  { city: "New Westminster", clients: 120, coord: [49.2057, -122.9110] }
+];
+---
+
+<Layout title={title} description={description} keywords={keywords}>
+  <!-- JSON-LD for Blog -->
+  <script type="application/ld+json" is:inline>
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "WestGroup Financial Blog",
+      "description": "Expert financial planning insights, emergency financial solutions, and wealth management strategies from Vancouver's trusted fiduciary advisors.",
+      "url": "https://westgroupfinancial.com/blog",
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://westgroupfinancial.com/#organization"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://westgroupfinancial.com/blog"
+      }
+    }
+  </script>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-screen bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 overflow-hidden pt-32 md:pt-20">
+    <!-- Background Effects -->
+    <div class="absolute inset-0 bg-gradient-to-br from-primary-500/5 via-transparent to-accent-500/5"></div>
+    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-500/3 rounded-full blur-3xl animate-float"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent-500/3 rounded-full blur-3xl animate-float" style="animation-delay: -3s;"></div>
+    
+    <div class="container-custom relative z-10 pt-24 pb-20">
+      <div class="max-w-5xl mx-auto text-center">
+        <!-- Hero Badge -->
+        <div class="mb-4 animate-fade-in">
+          <span class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary-500/20 to-accent-500/20 text-primary-300 text-sm font-semibold rounded-full border border-primary-500/30 backdrop-blur-lg glow-effect">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+            Expert Financial Insights & Emergency Solutions
+          </span>
+        </div>
+        
+        <h1 class="text-5xl md:text-7xl font-bold mb-8 animate-slide-up">
+          <span class="gradient-text">Financial Planning</span><br>
+          <span class="text-white">Blog & Resources</span>
+        </h1>
+        
+        <p class="text-xl md:text-2xl text-gray-300 mb-12 leading-relaxed max-w-4xl mx-auto animate-slide-up" style="animation-delay: 0.2s;">
+          Discover expert insights on <strong class="text-primary-300">emergency financial planning Vancouver</strong>, crisis management strategies, and comprehensive wealth management solutions from Vancouver's most trusted <strong class="text-accent-300">fiduciary financial advisors</strong>.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16 animate-slide-up" style="animation-delay: 0.4s;">
+          <a href="#recent-posts" class="btn-primary inline-flex items-center px-8 py-4 font-semibold text-lg shadow-2xl">
+            <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+            </svg>
+            Explore Financial Insights
+          </a>
+          <a href="/contact" class="btn-secondary inline-flex items-center px-8 py-4 font-semibold text-lg">
+            <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+            </svg>
+            Get Emergency Consultation
+          </a>
+        </div>
+
+        <!-- Enhanced Trust Indicators -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 animate-fade-in" style="animation-delay: 0.6s;">
+          <div class="card text-center p-6 hover:scale-105 transition-all duration-300">
+            <div class="w-12 h-12 bg-primary-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
+              <svg class="w-6 h-6 text-primary-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <div class="text-2xl font-bold text-white mb-1">Licensed</div>
+            <div class="text-sm text-gray-400">Fiduciary Advisors</div>
+          </div>
+          <div class="card text-center p-6 hover:scale-105 transition-all duration-300">
+            <div class="w-12 h-12 bg-accent-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
+              <svg class="w-6 h-6 text-accent-400" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <div class="text-2xl font-bold text-white mb-1">25+</div>
+            <div class="text-sm text-gray-400">Years Serving BC</div>
+          </div>
+          <div class="card text-center p-6 hover:scale-105 transition-all duration-300">
+            <div class="w-12 h-12 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
+              <svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+            </div>
+            <div class="text-2xl font-bold text-white mb-1">&lt; 1hr</div>
+            <div class="text-sm text-gray-400">Emergency Response</div>
+          </div>
+          <div class="card text-center p-6 hover:scale-105 transition-all duration-300">
+            <div class="w-12 h-12 bg-yellow-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
+              <svg class="w-6 h-6 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+            </div>
+            <div class="text-2xl font-bold text-white mb-1">4.9⭐</div>
+            <div class="text-sm text-gray-400">Client Rating</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Performance Stats Section -->
+  <section class="py-16 bg-gradient-to-r from-gray-800 to-slate-800">
+    <div class="container-custom">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            <span class="gradient-text">Proven Results</span> & Performance
+          </h2>
+          <p class="text-xl text-gray-300">Real metrics from our Vancouver financial advisory practice</p>
+        </div>
+        
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+          {performanceStats.map((stat, index) => (
+            <div class="card text-center p-6 hover:scale-105 transition-all duration-300 animate-fade-in" style={`animation-delay: ${index * 0.1}s;`}>
+              <div class="w-12 h-12 bg-primary-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                {stat.icon === 'clock' && (
+                  <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                )}
+                {stat.icon === 'lightning' && (
+                  <svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                  </svg>
+                )}
+                {stat.icon === 'users' && (
+                  <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"/>
+                  </svg>
+                )}
+                {stat.icon === 'trending-up' && (
+                  <svg class="w-6 h-6 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                  </svg>
+                )}
+                {stat.icon === 'calculator' && (
+                  <svg class="w-6 h-6 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                  </svg>
+                )}
+                {stat.icon === 'star' && (
+                  <svg class="w-6 h-6 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                )}
+              </div>
+              <div class={`text-2xl font-bold mb-2 ${stat.color}`}>{stat.value}</div>
+              <div class="text-sm text-gray-400">{stat.metric}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest Financial Insights Section -->
+  <section class="section-padding bg-gray-900">
+    <div class="container-custom">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">
+            Latest <span class="gradient-text">Financial Insights</span>
+          </h2>
+          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+            Stay informed with expert guidance on emergency financial planning in Vancouver, investment strategies, and comprehensive wealth management solutions.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-1 gap-8 max-w-4xl mx-auto">
+          <!-- Article 1: Financial Uncertainty -->
+          <article class="glass-effect rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 group">
+            <div class="p-6">
+              <div class="flex items-center text-sm text-gray-400 mb-3">
+                <span class="inline-block px-3 py-1 bg-red-500 text-white text-xs font-semibold rounded-full mr-3">
+                  Emergency Planning
+                </span>
+                <time datetime="2025-01-15">January 15, 2025</time>
+                <span class="mx-2">•</span>
+                <span>8 min read</span>
+              </div>
+              
+              <h3 class="text-2xl font-bold mb-3 group-hover:text-primary-300 transition-colors">
+                <a href="/blog/financial-uncertainty-guide" class="hover:underline">
+                  What to Do When You Face Financial Uncertainty
+                </a>
+              </h3>
+              
+              <p class="text-gray-300 mb-4 leading-relaxed">
+                Navigate through financial uncertainty with expert guidance from Vancouver's trusted financial advisors. Learn crisis management strategies, emergency financial planning, and immediate steps to protect your wealth during challenging times.
+              </p>
+              
+              <a 
+                href="/blog/financial-uncertainty-guide"
+                class="inline-flex items-center text-primary-400 hover:text-primary-300 font-semibold transition-colors group/link"
+              >
+                Read Article
+                <svg class="w-4 h-4 ml-1 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Article 2: Surrey Financial Planning -->
+          <article class="glass-effect rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 group">
+            <div class="p-6">
+              <div class="flex items-center text-sm text-gray-400 mb-3">
+                <span class="inline-block px-3 py-1 bg-blue-500 text-white text-xs font-semibold rounded-full mr-3">
+                  Location Guide
+                </span>
+                <time datetime="2025-01-12">January 12, 2025</time>
+                <span class="mx-2">•</span>
+                <span>12 min read</span>
+              </div>
+              
+              <h3 class="text-2xl font-bold mb-3 group-hover:text-primary-300 transition-colors">
+                <a href="/blog/financial-planning-services-surrey-bc" class="hover:underline">
+                  Complete Guide to Financial Planning Services in Surrey, BC
+                </a>
+              </h3>
+              
+              <p class="text-gray-300 mb-4 leading-relaxed">
+                Comprehensive guide to financial planning services available in Surrey, BC. Explore investment management, retirement planning, tax optimization, and wealth management solutions from licensed fiduciary advisors serving Greater Vancouver.
+              </p>
+              
+              <a 
+                href="/blog/financial-planning-services-surrey-bc"
+                class="inline-flex items-center text-primary-400 hover:text-primary-300 font-semibold transition-colors group/link"
+              >
+                Read Article
+                <svg class="w-4 h-4 ml-1 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Article 3: Advisory Costs -->
+          <article class="glass-effect rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 group">
+            <div class="p-6">
+              <div class="flex items-center text-sm text-gray-400 mb-3">
+                <span class="inline-block px-3 py-1 bg-green-500 text-white text-xs font-semibold rounded-full mr-3">
+                  Pricing Guide
+                </span>
+                <time datetime="2025-01-10">January 10, 2025</time>
+                <span class="mx-2">•</span>
+                <span>10 min read</span>
+              </div>
+              
+              <h3 class="text-2xl font-bold mb-3 group-hover:text-primary-300 transition-colors">
+                <a href="/blog/financial-advisor-fees-surrey-bc" class="hover:underline">
+                  How Much Does Financial Advisory Service Cost in Surrey, BC?
+                </a>
+              </h3>
+              
+              <p class="text-gray-300 mb-4 leading-relaxed">
+                Transparent breakdown of financial advisory service costs in Surrey, BC. Compare fee-only advisory fees, wealth management pricing, and understand what to expect when hiring a fiduciary financial advisor in Greater Vancouver.
+              </p>
+              
+              <a 
+                href="/blog/financial-advisor-fees-surrey-bc"
+                class="inline-flex items-center text-primary-400 hover:text-primary-300 font-semibold transition-colors group/link"
+              >
+                Read Article
+                <svg class="w-4 h-4 ml-1 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Article 4: Winter Financial Planning -->
+          <article class="glass-effect rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 group">
+            <div class="p-6">
+              <div class="flex items-center text-sm text-gray-400 mb-3">
+                <span class="inline-block px-3 py-1 bg-purple-500 text-white text-xs font-semibold rounded-full mr-3">
+                  Seasonal Planning
+                </span>
+                <time datetime="2025-01-08">January 8, 2025</time>
+                <span class="mx-2">•</span>
+                <span>9 min read</span>
+              </div>
+              
+              <h3 class="text-2xl font-bold mb-3 group-hover:text-primary-300 transition-colors">
+                <a href="/blog/winter-financial-planning-guide" class="hover:underline">
+                  Winter Financial Planning: Preparation Guide
+                </a>
+              </h3>
+              
+              <p class="text-gray-300 mb-4 leading-relaxed">
+                Prepare your finances for the winter season with comprehensive tax planning, budget optimization, and investment rebalancing strategies. Expert guidance from Vancouver financial advisors on year-end planning and RRSP contributions.
+              </p>
+              
+              <a 
+                href="/blog/winter-financial-planning-guide"
+                class="inline-flex items-center text-primary-400 hover:text-primary-300 font-semibold transition-colors group/link"
+              >
+                Read Article
+                <svg class="w-4 h-4 ml-1 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Article 5: Emergency Services -->
+          <article class="glass-effect rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 group">
+            <div class="p-6">
+              <div class="flex items-center text-sm text-gray-400 mb-3">
+                <span class="inline-block px-3 py-1 bg-orange-500 text-white text-xs font-semibold rounded-full mr-3">
+                  Emergency Services
+                </span>
+                <time datetime="2025-01-05">January 5, 2025</time>
+                <span class="mx-2">•</span>
+                <span>11 min read</span>
+              </div>
+              
+              <h3 class="text-2xl font-bold mb-3 group-hover:text-primary-300 transition-colors">
+                <a href="/blog/emergency-financial-services-guide" class="hover:underline">
+                  Emergency Financial Services: What You Need to Know
+                </a>
+              </h3>
+              
+              <p class="text-gray-300 mb-4 leading-relaxed">
+                Understand emergency financial services available in Vancouver. From urgent debt consolidation to immediate financial assistance, learn about crisis financial solutions and when to seek professional help from fiduciary advisors.
+              </p>
+              
+              <a 
+                href="/blog/emergency-financial-services-guide"
+                class="inline-flex items-center text-primary-400 hover:text-primary-300 font-semibold transition-colors group/link"
+              >
+                Read Article
+                <svg class="w-4 h-4 ml-1 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Review Badges Section -->
+  <section class="py-16 bg-gray-900">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-8">
+          <span class="gradient-text">Trusted</span> by Vancouver Families
+        </h2>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          {reviewBadges.map((badge, index) => (
+            <div class="card p-6 text-center hover:scale-105 transition-all duration-300 animate-fade-in" style={`animation-delay: ${index * 0.1}s;`}>
+              <div class="mb-4">
+                <img src={badge.badge} alt={`${badge.platform} reviews`} class="h-12 mx-auto opacity-80 hover:opacity-100 transition-opacity"/>
+              </div>
+              <div class="text-2xl font-bold text-white mb-1">
+                {typeof badge.rating === 'number' ? `${badge.rating}⭐` : badge.rating}
+              </div>
+              <div class="text-sm text-gray-400">{badge.platform}</div>
+              <div class="text-xs text-gray-500 mt-1">{badge.reviews} {typeof badge.reviews === 'number' ? 'reviews' : ''}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Trust Badges & Certifications -->
+  <section class="py-16 bg-gray-800">
+    <div class="container-custom">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            <span class="gradient-text">Licensed</span> & Certified Professionals
+          </h2>
+          <p class="text-xl text-gray-300">Your security and trust are our highest priorities</p>
+        </div>
+        
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+          {trustBadges.map((badge, index) => (
+            <div class="card text-center p-6 hover:scale-105 transition-all duration-300 animate-fade-in" style={`animation-delay: ${index * 0.1}s;`} title={badge.desc}>
+              <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                <img src={badge.icon} alt={badge.name} class="h-12 opacity-80 hover:opacity-100 transition-opacity"/>
+              </div>
+              <div class="text-sm font-semibold text-white mb-1">{badge.name}</div>
+              <div class="text-xs text-gray-400">{badge.desc}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Area Map -->
+  <section class="py-20 bg-gradient-to-b from-gray-900 to-slate-900">
+    <div class="container-custom">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold mb-6">
+            <span class="gradient-text">Serving</span> Greater Vancouver
+          </h2>
+          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+            Providing <strong class="text-primary-300">financial planning services Vancouver</strong> and emergency financial solutions across Metro Vancouver and the Lower Mainland
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <!-- Map Visualization -->
+          <div class="card p-8">
+            <h3 class="text-2xl font-bold text-white mb-6">Service Coverage Map</h3>
+            
+            <!-- Interactive Map Container -->
+            <div class="relative h-80 bg-gray-800 rounded-xl overflow-hidden mb-6">
+              <div class="absolute inset-0 bg-gradient-to-br from-primary-500/20 via-transparent to-accent-500/20"></div>
+              
+              <!-- Map Points -->
+              <div class="absolute inset-0">
+                <!-- Vancouver -->
+                <div class="absolute" style="top: 45%; left: 35%;">
+                  <div class="w-4 h-4 bg-primary-400 rounded-full animate-pulse shadow-lg"></div>
+                  <div class="absolute -top-8 -left-6 text-xs font-semibold text-white bg-gray-900/80 px-2 py-1 rounded">Vancouver</div>
+                </div>
+                
+                <!-- Surrey -->
+                <div class="absolute" style="top: 65%; left: 55%;">
+                  <div class="w-4 h-4 bg-accent-400 rounded-full animate-pulse shadow-lg"></div>
+                  <div class="absolute -top-8 -left-4 text-xs font-semibold text-white bg-gray-900/80 px-2 py-1 rounded">Surrey</div>
+                </div>
+                
+                <!-- Richmond -->
+                <div class="absolute" style="top: 55%; left: 25%;">
+                  <div class="w-3 h-3 bg-blue-400 rounded-full animate-pulse shadow-lg"></div>
+                  <div class="absolute -top-8 -left-6 text-xs font-semibold text-white bg-gray-900/80 px-2 py-1 rounded">Richmond</div>
+                </div>
+                
+                <!-- Burnaby -->
+                <div class="absolute" style="top: 50%; left: 45%;">
+                  <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse shadow-lg"></div>
+                  <div class="absolute -top-8 -left-5 text-xs font-semibold text-white bg-gray-900/80 px-2 py-1 rounded">Burnaby</div>
+                </div>
+                
+                <!-- Coverage Area Overlay -->
+                <div class="absolute inset-0 border-2 border-primary-400/30 rounded-xl"></div>
+              </div>
+            </div>
+            
+            <div class="text-center text-sm text-gray-400">
+              Interactive coverage map showing our <strong class="text-primary-300">financial services Vancouver Metro</strong> presence
+            </div>
+          </div>
+          
+          <!-- Service Areas List -->
+          <div class="space-y-4">
+            <h3 class="text-2xl font-bold text-white mb-6">Cities We Serve</h3>
+            
+            {serviceAreas.map((area, index) => (
+              <div class="card p-4 hover:scale-[1.02] transition-all duration-300 animate-slide-in-right" style={`animation-delay: ${index * 0.1}s;`}>
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center">
+                    <div class="w-10 h-10 bg-primary-500/20 rounded-full flex items-center justify-center mr-4">
+                      <svg class="w-5 h-5 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="font-semibold text-white">{area.city}</div>
+                      <div class="text-sm text-gray-400">{area.clients} active clients</div>
+                    </div>
+                  </div>
+                  <div class="text-right">
+                    <div class="text-sm font-medium text-primary-300">Full Service</div>
+                    <div class="text-xs text-gray-500">In-person & Virtual</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+            
+            <!-- Contact for Other Areas -->
+            <div class="card p-4 border border-dashed border-primary-500/50">
+              <div class="text-center">
+                <div class="text-sm text-gray-400 mb-2">Not in your area?</div>
+                <a href="/contact" class="text-primary-400 font-semibold hover:text-primary-300 transition-colors">
+                  Contact us for virtual <strong>financial planning services Vancouver</strong> ↗
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Search and Filter Section -->
+  <section class="py-12 bg-gray-800/50">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <div class="glass-effect rounded-2xl p-6">
+          <div class="flex flex-col md:flex-row gap-4">
+            <div class="flex-1">
+              <div class="relative">
+                <input 
+                  type="text" 
+                  id="blog-search" 
+                  placeholder="Search for financial planning topics, emergency solutions, investment advice..."
+                  class="w-full px-4 py-3 pl-12 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                />
+                <svg class="absolute left-4 top-3.5 h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                </svg>
+              </div>
+            </div>
+            <div class="flex gap-3">
+              <select id="category-filter" class="px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-primary-500">
+                <option value="">All Categories</option>
+                <option value="Emergency Planning">Emergency Planning</option>
+                <option value="Location Guide">Location Guide</option>
+                <option value="Pricing Guide">Pricing Guide</option>
+                <option value="Seasonal Planning">Seasonal Planning</option>
+                <option value="Emergency Services">Emergency Services</option>
+              </select>
+              <button id="clear-filters" class="px-4 py-3 bg-gray-600 hover:bg-gray-500 text-white rounded-lg transition-colors">
+                Clear
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CTA Section -->
+  <section class="section-padding bg-gradient-to-r from-gray-800 to-gray-700">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          Need <span class="gradient-text">Emergency Financial Help?</span>
+        </h2>
+        <p class="text-xl text-gray-300 mb-8">
+          Don't navigate financial uncertainty alone. Get immediate expert guidance from Vancouver's trusted <strong>crisis financial advisors</strong> and <strong>emergency financial planning specialists</strong>.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+          <a href="/contact" class="btn-primary inline-flex items-center px-8 py-4 font-semibold">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+            </svg>
+            Get Emergency Consultation
+          </a>
+          <a href="tel:+16041234567" class="btn-secondary inline-flex items-center px-8 py-4 font-semibold">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+            </svg>
+            Call (604) 123-4567
+          </a>
+        </div>
+
+        <div class="flex justify-center gap-8 text-sm text-gray-400">
+          <div class="flex items-center">
+            <svg class="w-4 h-4 text-primary-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            Licensed & Bonded
+          </div>
+          <div class="flex items-center">
+            <svg class="w-4 h-4 text-primary-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+            </svg>
+            Same-Day Response
+          </div>
+          <div class="flex items-center">
+            <svg class="w-4 h-4 text-primary-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+            </svg>
+            Fiduciary Standard
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const searchInput = document.getElementById('blog-search') as HTMLInputElement;
+      const categoryFilter = document.getElementById('category-filter') as HTMLSelectElement;
+      const clearFilters = document.getElementById('clear-filters') as HTMLButtonElement;
+      const noResults = document.getElementById('no-results');
+      const allPosts = document.querySelectorAll('.blog-post');
+      const shareButtons = document.querySelectorAll('.share-btn');
+
+      function filterPosts() {
+        const searchTerm = searchInput?.value.toLowerCase() || '';
+        const selectedCategory = categoryFilter?.value || '';
+        let visibleCount = 0;
+
+        allPosts.forEach(post => {
+          const title = post.querySelector('h3')?.textContent?.toLowerCase() || '';
+          const excerpt = post.querySelector('p')?.textContent?.toLowerCase() || '';
+          const category = post.getAttribute('data-category') || '';
+          
+          const matchesSearch = title.includes(searchTerm) || excerpt.includes(searchTerm);
+          const matchesCategory = !selectedCategory || category === selectedCategory;
+          
+          if (matchesSearch && matchesCategory) {
+            (post as HTMLElement).style.display = 'block';
+            visibleCount++;
+          } else {
+            (post as HTMLElement).style.display = 'none';
+          }
+        });
+
+        if (noResults) {
+          noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+      }
+
+      function clearAllFilters() {
+        if (searchInput) searchInput.value = '';
+        if (categoryFilter) categoryFilter.value = '';
+        filterPosts();
+      }
+
+      // Event listeners
+      searchInput?.addEventListener('input', filterPosts);
+      categoryFilter?.addEventListener('change', filterPosts);
+      clearFilters?.addEventListener('click', clearAllFilters);
+
+      // Share functionality
+      shareButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const url = window.location.origin + this.getAttribute('data-url');
+          const title = this.getAttribute('data-title');
+          
+          if (navigator.share) {
+            navigator.share({
+              title: title,
+              url: url
+            });
+          } else {
+            // Fallback to copying URL to clipboard
+            navigator.clipboard.writeText(url).then(() => {
+              // Simple feedback - could be improved with a toast notification
+              const originalText = this.innerHTML;
+              this.innerHTML = '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>';
+              setTimeout(() => {
+                this.innerHTML = originalText;
+              }, 2000);
+            });
+          }
+        });
+      });
+    });
+  </script>
+
+  <style>
+    .line-clamp-3 {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  </style>
+</Layout>

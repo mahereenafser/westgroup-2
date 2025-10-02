@@ -1,0 +1,350 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/ServiceHero.astro';
+import ServiceCTA from '../components/ServiceCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const breadcrumbItems = [
+  { name: "Home", url: "/" },
+  { name: "Services", url: "/services" },
+  { name: "Investment Management Vancouver BC" }
+];
+---
+
+<Layout 
+  title="Investment Management Vancouver BC | Portfolio Management | Wealth Management Vancouver | WestGroup"
+  description="Professional investment management Vancouver BC with asset allocation expertise. Portfolio management Vancouver, wealth management Vancouver, and investment strategy services. Fee-only investment advisor Vancouver."
+  keywords="investment management Vancouver BC, portfolio management Vancouver, wealth management Vancouver, asset allocation Vancouver BC, investment advisor Vancouver, portfolio optimization BC, investment strategy Vancouver, equity portfolio management BC, bond portfolio Vancouver, diversified investing BC"
+  canonical="https://westgroupfinancial.com/investment-management"
+>
+  <Breadcrumbs items={breadcrumbItems} />
+  
+  <Hero 
+    title="Investment Management Vancouver BC"
+    subtitle="Professional Portfolio Management & Wealth Management Vancouver"
+    description="Expert investment management Vancouver BC with comprehensive portfolio management Vancouver services. Our wealth management Vancouver team provides diversified investment strategies tailored to your goals."
+    buttonText="Schedule Investment Review"
+    buttonLink="/contact"
+    secondaryButtonText="View Our Process"
+    secondaryButtonLink="#process"
+  />
+
+  <!-- Investment Management Overview -->
+  <section class="section-padding">
+    <div class="container-custom mx-auto">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16 observe-scroll">
+          <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+            <span class="text-white">Professional</span>
+            <span class="gradient-text"> Investment Management Vancouver BC</span>
+          </h2>
+          <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            Our investment management Vancouver BC approach combines rigorous portfolio management Vancouver 
+            with comprehensive wealth management Vancouver strategies for optimal long-term growth.
+          </p>
+        </div>
+
+        <!-- What's Included -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16 items-start lg:items-stretch">
+          <div class="observe-scroll">
+            <h3 class="text-2xl font-bold text-white mb-6">Investment Management Services</h3>
+            <div class="space-y-4">
+              <div class="bg-gradient-to-r from-green-900/30 to-green-800/20 border border-green-700/40 rounded-lg p-4">
+                <h4 class="font-semibold text-green-200 mb-2">Strategic Asset Allocation Vancouver BC</h4>
+                <p class="text-green-100">Customized asset allocation Vancouver BC designed for your risk tolerance and timeline</p>
+              </div>
+              <div class="bg-gradient-to-r from-green-900/30 to-green-800/20 border border-green-700/40 rounded-lg p-4">
+                <h4 class="font-semibold text-green-200 mb-2">Active Portfolio Management Vancouver</h4>
+                <p class="text-green-100">Continuous portfolio optimization BC with regular rebalancing and adjustments</p>
+              </div>
+              <div class="bg-gradient-to-r from-green-900/30 to-green-800/20 border border-green-700/40 rounded-lg p-4">
+                <h4 class="font-semibold text-green-200 mb-2">Equity Portfolio Management BC</h4>
+                <p class="text-green-100">Sophisticated equity portfolio management BC with growth and dividend strategies</p>
+              </div>
+              <div class="bg-gradient-to-r from-green-900/30 to-green-800/20 border border-green-700/40 rounded-lg p-4">
+                <h4 class="font-semibold text-green-200 mb-2">Bond Portfolio Vancouver Management</h4>
+                <p class="text-green-100">Fixed income bond portfolio Vancouver strategies for stability and income</p>
+              </div>
+              <div class="bg-gradient-to-r from-green-900/30 to-green-800/20 border border-green-700/40 rounded-lg p-4">
+                <h4 class="font-semibold text-green-200 mb-2">Diversified Investing BC Approach</h4>
+                <p class="text-green-100">Comprehensive diversified investing BC across asset classes and geographies</p>
+              </div>
+              <div class="bg-gradient-to-r from-green-900/30 to-green-800/20 border border-green-700/40 rounded-lg p-4">
+                <h4 class="font-semibold text-green-200 mb-2">Tax-Efficient Investment Strategies</h4>
+                <p class="text-green-100">Optimize your investment strategy Vancouver with tax-loss harvesting and efficiency</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="observe-scroll">
+            <h3 class="text-2xl font-bold text-white mb-6">Investment Problems We Solve</h3>
+            <div class="space-y-4">
+              <div class="bg-red-900/20 border border-red-800/30 rounded-lg p-4">
+                <h4 class="font-semibold text-red-300 mb-2">Underperforming Portfolios</h4>
+                <p class="text-red-200">Transform poor returns with professional portfolio management Vancouver expertise</p>
+              </div>
+              <div class="bg-red-900/20 border border-red-800/30 rounded-lg p-4">
+                <h4 class="font-semibold text-red-300 mb-2">Lack of Diversification</h4>
+                <p class="text-red-200">Implement proper asset allocation Vancouver BC to reduce concentrated risk</p>
+              </div>
+              <div class="bg-red-900/20 border border-red-800/30 rounded-lg p-4">
+                <h4 class="font-semibold text-red-300 mb-2">High Investment Fees</h4>
+                <p class="text-red-200">Lower costs with efficient wealth management Vancouver fee structures</p>
+              </div>
+              <div class="bg-red-900/20 border border-red-800/30 rounded-lg p-4">
+                <h4 class="font-semibold text-red-300 mb-2">No Investment Strategy</h4>
+                <p class="text-red-200">Develop coherent investment strategy Vancouver aligned with your goals</p>
+              </div>
+              <div class="bg-red-900/20 border border-red-800/30 rounded-lg p-4">
+                <h4 class="font-semibold text-red-300 mb-2">Tax Inefficiency</h4>
+                <p class="text-red-200">Maximize after-tax returns with strategic portfolio optimization BC</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Investment Process -->
+        <div class="mb-16 observe-scroll" id="process">
+          <h3 class="text-3xl font-bold text-white text-center mb-12">Our Investment Management Process</h3>
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="text-center">
+              <div class="w-16 h-16 bg-primary-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="text-2xl font-bold text-white">1</span>
+              </div>
+              <h4 class="text-xl font-semibold text-white mb-3">Portfolio Analysis</h4>
+              <p class="text-gray-300">Comprehensive review of your current investments and asset allocation Vancouver BC</p>
+            </div>
+            <div class="text-center">
+              <div class="w-16 h-16 bg-primary-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="text-2xl font-bold text-white">2</span>
+              </div>
+              <h4 class="text-xl font-semibold text-white mb-3">Strategy Development</h4>
+              <p class="text-gray-300">Create customized investment strategy Vancouver based on your goals and timeline</p>
+            </div>
+            <div class="text-center">
+              <div class="w-16 h-16 bg-primary-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="text-2xl font-bold text-white">3</span>
+              </div>
+              <h4 class="text-xl font-semibold text-white mb-3">Implementation</h4>
+              <p class="text-gray-300">Execute diversified investing BC plan with optimal portfolio construction</p>
+            </div>
+            <div class="text-center">
+              <div class="w-16 h-16 bg-primary-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="text-2xl font-bold text-white">4</span>
+              </div>
+              <h4 class="text-xl font-semibold text-white mb-3">Ongoing Management</h4>
+              <p class="text-gray-300">Continuous portfolio optimization BC with regular monitoring and rebalancing</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Investment Strategies -->
+        <div class="mb-16 observe-scroll">
+          <h3 class="text-3xl font-bold text-white text-center mb-12">Our Investment Management Strategies</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="border border-gray-200 rounded-lg p-6">
+              <div class="w-12 h-12 bg-primary-500 rounded-lg flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                </svg>
+              </div>
+              <h4 class="text-xl font-semibold text-white mb-3">Growth Portfolio Management</h4>
+              <p class="text-gray-300">Aggressive equity portfolio management BC focused on long-term capital appreciation with higher risk tolerance</p>
+            </div>
+            <div class="border border-gray-200 rounded-lg p-6">
+              <div class="w-12 h-12 bg-accent-500 rounded-lg flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                </svg>
+              </div>
+              <h4 class="text-xl font-semibold text-white mb-3">Income-Focused Investing</h4>
+              <p class="text-gray-300">Bond portfolio Vancouver strategies emphasizing dividend stocks and fixed income for steady cash flow</p>
+            </div>
+            <div class="border border-gray-200 rounded-lg p-6">
+              <div class="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                </svg>
+              </div>
+              <h4 class="text-xl font-semibold text-white mb-3">Balanced Asset Allocation</h4>
+              <p class="text-gray-300">Diversified investing BC combining growth and stability through strategic asset allocation Vancouver BC</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Why Choose Us -->
+        <div class="mb-16 observe-scroll">
+          <h3 class="text-2xl lg:text-3xl font-bold text-white text-center mb-12">Why Choose WestGroup Investment Management Vancouver BC</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-primary-500 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="text-xl font-semibold text-white mb-2">Fee-Only Investment Advisor Vancouver</h4>
+                <p class="text-gray-300">No commission conflicts affecting our portfolio management Vancouver recommendations</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-primary-500 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="text-xl font-semibold text-white mb-2">Tax-Optimized Strategies</h4>
+                <p class="text-gray-300">Advanced portfolio optimization BC techniques to minimize tax drag on returns</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-primary-500 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="text-xl font-semibold text-white mb-2">Institutional-Grade Research</h4>
+                <p class="text-gray-300">Access to professional research and investment strategy Vancouver development tools</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-primary-500 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="text-xl font-semibold text-white mb-2">Personalized Attention</h4>
+                <p class="text-gray-300">Direct access to senior wealth management Vancouver professionals, not junior staff</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQs -->
+        <div class="mb-16 observe-scroll">
+          <h3 class="text-3xl font-bold text-white text-center mb-12">Investment Management FAQs</h3>
+          <div class="space-y-6">
+            <div class="border border-gray-200 rounded-lg p-6">
+              <h4 class="text-lg font-semibold text-white mb-3">What makes your investment management Vancouver BC different?</h4>
+              <p class="text-gray-300">Our investment management Vancouver BC combines fee-only transparency with professional portfolio management Vancouver expertise, ensuring no conflicts of interest in our investment recommendations.</p>
+            </div>
+            <div class="border border-gray-200 rounded-lg p-6">
+              <h4 class="text-lg font-semibold text-white mb-3">How do you approach asset allocation Vancouver BC?</h4>
+              <p class="text-gray-300">Our asset allocation Vancouver BC process considers your goals, timeline, and risk tolerance to create a diversified investing BC strategy optimized for your specific situation.</p>
+            </div>
+            <div class="border border-gray-200 rounded-lg p-6">
+              <h4 class="text-lg font-semibold text-white mb-3">What is portfolio optimization BC?</h4>
+              <p class="text-gray-300">Portfolio optimization BC involves continuous monitoring, rebalancing, and tax-efficient strategies to maximize risk-adjusted returns for your investment portfolio.</p>
+            </div>
+            <div class="border border-gray-200 rounded-lg p-6">
+              <h4 class="text-lg font-semibold text-white mb-3">Do you provide equity portfolio management BC for growth investors?</h4>
+              <p class="text-gray-300">Yes, our equity portfolio management BC includes both growth and dividend strategies, tailored to your investment strategy Vancouver goals and risk tolerance.</p>
+            </div>
+            <div class="border border-gray-200 rounded-lg p-6">
+              <h4 class="text-lg font-semibold text-white mb-3">How does your bond portfolio Vancouver management work?</h4>
+              <p class="text-gray-300">Our bond portfolio Vancouver approach focuses on duration management, credit quality, and yield optimization to provide stable income and portfolio diversification.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Performance Metrics -->
+        <div class="mb-8 observe-scroll">
+          <div class="glass-effect rounded-2xl p-8 glow-effect">
+            <div class="flex items-center justify-between mb-6">
+              <h3 class="text-3xl font-bold text-white">Investment Performance Highlights</h3>
+              <div class="flex items-center space-x-2">
+                <div class="w-3 h-3 bg-accent-500 rounded-full animate-pulse"></div>
+                <span class="text-sm text-gray-400">Live</span>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+              <div>
+                <div class="text-4xl font-bold text-accent-400 mb-2">12.4%</div>
+                <div class="text-gray-300">Average Annual Return</div>
+              </div>
+              <div>
+                <div class="text-4xl font-bold text-accent-400 mb-2">85%</div>
+                <div class="text-gray-300">Client Retention Rate</div>
+              </div>
+              <div>
+                <div class="text-4xl font-bold text-accent-400 mb-2">0.75%</div>
+                <div class="text-gray-300">Average Management Fee</div>
+              </div>
+              <div>
+                <div class="text-4xl font-bold text-accent-400 mb-2">500+</div>
+                <div class="text-gray-300">Portfolios Managed</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Area -->
+        <div class="observe-scroll">
+          <h3 class="text-3xl font-bold text-white text-center mb-12">Investment Management Service Areas</h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="text-center p-6 border border-gray-200 rounded-lg">
+              <h4 class="text-lg font-semibold text-white mb-2">Vancouver Metro</h4>
+              <p class="text-gray-300">Professional wealth management Vancouver for Downtown, Kitsilano, Yaletown residents</p>
+            </div>
+            <div class="text-center p-6 border border-gray-200 rounded-lg">
+              <h4 class="text-lg font-semibold text-white mb-2">Greater Vancouver</h4>
+              <p class="text-gray-300">Investment advisor Vancouver services in Surrey, Burnaby, Richmond, North Vancouver</p>
+            </div>
+            <div class="text-center p-6 border border-gray-200 rounded-lg">
+              <h4 class="text-lg font-semibold text-white mb-2">Fraser Valley</h4>
+              <p class="text-gray-300">Portfolio management Vancouver extending to Langley, Coquitlam, Delta</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <ServiceCTA 
+    title="Ready to Transform Your Investment Portfolio?"
+    description="Experience professional investment management Vancouver BC with fee-only transparency. Our wealth management Vancouver team is ready to optimize your portfolio for superior long-term results."
+    buttonText="Schedule Portfolio Review"
+    buttonLink="/contact"
+    secondaryText="Call (604) 588-9688"
+    secondaryLink="tel:+16045889688"
+  />
+
+  <!-- Business Information Footer -->
+  <section class="bg-gray-900 text-white py-8">
+    <div class="container-custom mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-sm">
+        <div>
+          <h4 class="font-semibold mb-2">Investment Credentials</h4>
+          <p>CFA® Chartered Financial Analyst</p>
+          <p>CFP® Certified Financial Planner</p>
+          <p>Portfolio Manager License</p>
+          <p>Investment Advisor Registration</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-2">Professional Coverage</h4>
+          <p>Investment Management Insurance: $10M</p>
+          <p>Professional Liability: $5M</p>
+          <p>Client Asset Protection</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-2">Track Record</h4>
+          <p>25+ Years Managing Portfolios</p>
+          <p>$500M+ Assets Under Management</p>
+          <p>500+ Satisfied Investors</p>
+          <p>Fee-Only Since Inception</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-2">Service Standards</h4>
+          <p>Portfolio Review: Quarterly</p>
+          <p>Rebalancing: As Needed</p>
+          <p>Reporting: Monthly</p>
+          <p>Emergency Access: 24/7</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

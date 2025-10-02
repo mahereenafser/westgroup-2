@@ -1,0 +1,100 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FinancialCalculator from '../components/Calculator.astro';
+---
+
+<Layout
+  title="Financial Calculators - WestGroup Financial Management"
+  description="Free Canadian financial planning calculators including savings, investment income, tax rates, RRSP loan, loan postponement, inflation, and RRSP tax savings calculators."
+  keywords="Canadian financial calculators, savings calculator, investment income calculator, tax rates calculator, RRSP loan calculator, inflation calculator, RRSP tax savings calculator, British Columbia financial planning"
+  canonical="https://westgroupfinancial.com/calculator"
+>
+  <!-- Hero Section -->
+  <section class="relative min-h-screen bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 flex items-center justify-center overflow-hidden pt-32 md:pt-20">
+    <!-- Animated Calculator Graphics Background -->
+    <div class="absolute inset-0 -z-10 overflow-hidden">
+      <div class="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-primary-500/10 to-accent-500/10 rounded-full blur-3xl animate-float"></div>
+      <div class="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-r from-accent-500/10 to-primary-500/10 rounded-full blur-3xl animate-float" style="animation-delay: -2s;"></div>
+
+      <!-- Calculator Graphics -->
+      <div class="absolute top-32 right-20 text-6xl font-bold text-primary-500/20 animate-pulse" style="animation-delay: 1s;">$</div>
+      <div class="absolute bottom-40 left-20 text-4xl font-bold text-accent-500/20 animate-bounce" style="animation-delay: 2s;">%</div>
+      <div class="absolute top-60 left-1/4 text-5xl font-bold text-primary-500/15 animate-pulse" style="animation-delay: 3s;">+</div>
+      <div class="absolute bottom-60 right-1/4 text-3xl font-bold text-accent-500/25 animate-bounce" style="animation-delay: 4s;">123</div>
+      <div class="absolute top-1/2 left-16 text-4xl font-bold text-primary-500/20 animate-pulse" style="animation-delay: 5s;">=</div>
+      <div class="absolute top-40 right-1/3 text-2xl font-bold text-accent-500/30 animate-bounce" style="animation-delay: 6s;">7.5%</div>
+
+      <!-- Neon Gradient Outline Calculator -->
+      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -z-10">
+        <div class="w-64 h-80 border-4 border-gradient-to-r from-primary-500/30 to-accent-500/30 rounded-2xl shadow-[0_0_50px_rgba(58,160,140,0.3)] animate-pulse">
+          <div class="p-4 space-y-3">
+            <div class="h-12 bg-gradient-to-r from-primary-500/10 to-accent-500/10 rounded-lg"></div>
+            <div class="grid grid-cols-3 gap-2">
+              <div class="h-8 bg-primary-500/20 rounded"></div>
+              <div class="h-8 bg-accent-500/20 rounded"></div>
+              <div class="h-8 bg-primary-500/20 rounded"></div>
+              <div class="h-8 bg-accent-500/20 rounded"></div>
+              <div class="h-8 bg-primary-500/20 rounded"></div>
+              <div class="h-8 bg-accent-500/20 rounded"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-custom mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      <div class="observe-scroll">
+        <div class="relative">
+          <h1 class="text-5xl lg:text-7xl font-bold mb-6 leading-tight relative z-10">
+            <span class="text-white">Financial</span><br>
+            <span class="gradient-text relative">
+              Calculators
+              <div class="absolute -inset-4 bg-gradient-to-r from-primary-500/20 via-transparent to-accent-500/20 rounded-full blur-xl -z-10 animate-pulse"></div>
+            </span>
+          </h1>
+        </div>
+        <p class="text-xl lg:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
+          Professional-grade Canadian financial planning tools with accurate tax calculations for all provinces.
+          Get instant insights into your savings, investments, taxes, and retirement strategies.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <a href="#calculators" class="btn-primary text-lg px-8 py-4">Start Calculating</a>
+          <a href="/contact" class="btn-secondary text-lg px-8 py-4">Schedule Consultation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calculator Component -->
+  <div id="calculators">
+    <FinancialCalculator />
+  </div>
+
+  <!-- CTA Section -->
+  <section class="section-padding bg-gradient-to-r from-gray-800 to-slate-800">
+    <div class="container-custom mx-auto text-center">
+      <div class="observe-scroll glass-effect rounded-2xl p-12 glow-effect">
+        <h2 class="text-4xl font-bold text-white mb-6">Get Professional Analysis</h2>
+        <p class="text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+          While these calculators provide valuable insights, nothing replaces personalized analysis from experienced
+          fee-only fiduciary advisors. Schedule your complimentary consultation today.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/contact" class="btn-primary text-lg px-8 py-4 inline-flex items-center">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+            Schedule Free Consultation
+          </a>
+          <a href="/services" class="btn-secondary text-lg px-8 py-4 inline-flex items-center">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+            </svg>
+            Explore Our Services
+          </a>
+        </div>
+        <p class="text-sm text-gray-400 mt-6">No obligation • Confidential discussion • Immediate insights</p>
+      </div>
+    </div>
+  </section>
+</Layout>

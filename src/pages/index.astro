@@ -1,0 +1,351 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import ServicesGrid from '../components/ServicesGrid.astro';
+import Certifications from '../components/Certifications.astro';
+import Testimonials from '../components/Testimonials.astro';
+---
+
+<Layout 
+  title="Financial Advisor Vancouver BC | Best Financial Planner Vancouver | Fee-Only Wealth Management Vancouver | Top Investment Advisor Vancouver"
+  description="#1 financial advisor Vancouver BC with best financial planner Vancouver services. Fee-only wealth management Vancouver, top investment advisor Vancouver, retirement income planning Vancouver BC, and comprehensive financial planning Vancouver for your success."
+  keywords="financial advisor Vancouver BC, best financial planner Vancouver, fee-only wealth management Vancouver, top investment advisor Vancouver, retirement income planning Vancouver BC, comprehensive financial planning Vancouver, financial advisor Surrey BC, financial advisor downtown Vancouver, hire financial advisor Vancouver, financial advisor fees Vancouver, compare financial planners BC, financial advisor reviews Vancouver, debt consolidation Vancouver BC, financial problems solutions Vancouver, emergency financial consultation Vancouver"
+  canonical="https://westgroupfinancial.com/"
+>
+  <div>
+    <Hero />
+    <ServicesGrid />
+  
+    <!-- Why Choose Us Section -->
+  <section class="relative py-8 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <!-- Background Image -->
+    <div class="absolute inset-0 w-full h-full bg-cover bg-center z-0" style="background-image: url('/images/whychooseus.webp');"></div>
+
+    <!-- Dark Overlay -->
+    <div class="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
+
+    <div class="container-custom mx-auto relative z-20">
+      <div class="text-center mb-10 observe-scroll">
+        <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+          <span class="text-white">Why Choose</span>
+          <span class="gradient-text"> WestGroup?</span>
+        </h2>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          We're not just financial advisors—we're your partners in building generational wealth through transparent, 
+          fee-only fiduciary services that always put your interests first.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="observe-scroll">
+          <div class="space-y-8">
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-primary-500 to-primary-400 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-white mb-2">Fee-Only Fiduciary Standard</h3>
+                <p class="text-gray-300 leading-relaxed">
+                  Unlike commission-based advisors, we're legally bound to act in your best interest. 
+                  Our transparent fee structure means no hidden costs or conflicts of interest.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-accent-600 to-accent-500 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-white mb-2">Tax-Efficient Expertise</h3>
+                <p class="text-gray-300 leading-relaxed">
+                  Specialized in tax-loss harvesting, income splitting, and advanced strategies that 
+                  can save high-net-worth clients thousands annually.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-primary-600 to-accent-600 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-white mb-2">Comprehensive Planning</h3>
+                <p class="text-gray-300 leading-relaxed">
+                  From retirement income planning to business succession strategies, we provide 
+                  holistic financial solutions that adapt to your evolving needs.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="observe-scroll">
+          <div class="glass-effect rounded-2xl p-8 glow-effect">
+            <h3 class="text-2xl font-bold text-white mb-6 text-center">Ready to Get Started?</h3>
+            <div class="space-y-4">
+              <div class="flex items-center justify-between p-4 bg-gray-800/50 rounded-lg">
+                <span class="text-gray-300">Free Initial Consultation</span>
+                <span class="text-accent-400 font-bold">$0</span>
+              </div>
+              <div class="flex items-center justify-between p-4 bg-gray-800/50 rounded-lg">
+                <span class="text-gray-300">Comprehensive Financial Plan</span>
+                <span class="text-primary-400 font-bold">Custom Quote</span>
+              </div>
+              <div class="flex items-center justify-between p-4 bg-gray-800/50 rounded-lg">
+                <span class="text-gray-300">Ongoing Management</span>
+                <span class="text-accent-400 font-bold">Fee-Only</span>
+              </div>
+            </div>
+            <div class="mt-8 text-center">
+              <!-- Fixed mobile button spacing -->
+              <div class="mobile-button-container">
+                <a href="/contact" class="bg-gradient-to-r from-accent-600 to-accent-500 hover:from-accent-500 hover:to-accent-400 text-gray-900 font-medium py-4 px-8 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 w-full text-lg block text-center">
+                  Schedule Your Free Consultation
+                </a>
+              </div>
+              <p class="text-xs text-gray-400 mt-3">No obligation • Confidential discussion • Immediate insights</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <Certifications />
+    <Testimonials />
+  </div>
+
+  <!-- Service Areas and Specialties -->
+  <section class="py-8 px-4 sm:px-6 lg:px-8 bg-gray-900">
+    <div class="container-custom mx-auto">
+      <div class="text-center mb-10 observe-scroll">
+        <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+          <span class="text-white">Specialized Services &</span>
+          <span class="gradient-text"> Service Areas</span>
+        </h2>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          Comprehensive financial advisor Vancouver BC services across Metro Vancouver and British Columbia
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Investment Management -->
+        <div class="card group hover:scale-105 transition-transform duration-300">
+          <h3 class="text-xl font-semibold text-white mb-3">
+            <a href="/investment-management" class="hover:text-primary-400">Investment Management Vancouver BC</a>
+          </h3>
+          <p class="text-gray-300 text-sm mb-4">
+            Professional portfolio management Vancouver with asset allocation and wealth management Vancouver services.
+          </p>
+          <a href="/investment-management" class="text-primary-400 hover:text-primary-300 text-sm font-medium">Learn More →</a>
+        </div>
+
+        <!-- Retirement Planning -->
+        <div class="card group hover:scale-105 transition-transform duration-300">
+          <h3 class="text-xl font-semibold text-white mb-3">
+            <a href="/retirement-planning" class="hover:text-primary-400">Retirement Planning Vancouver BC</a>
+          </h3>
+          <p class="text-gray-300 text-sm mb-4">
+            Retirement income planning Vancouver with RRSP advice and pension planning BC expertise.
+          </p>
+          <a href="/retirement-planning" class="text-accent-400 hover:text-accent-300 text-sm font-medium">Learn More →</a>
+        </div>
+
+        <!-- Fee-Only Advisory -->
+        <div class="card group hover:scale-105 transition-transform duration-300">
+          <h3 class="text-xl font-semibold text-white mb-3">
+            <a href="/fee-only-financial-advisor" class="hover:text-primary-400">Fee-Only Financial Advisor</a>
+          </h3>
+          <p class="text-gray-300 text-sm mb-4">
+            Transparent fee-only financial advisor Vancouver BC with fiduciary commitment and no commission conflicts.
+          </p>
+          <a href="/fee-only-financial-advisor" class="text-primary-400 hover:text-primary-300 text-sm font-medium">Learn More →</a>
+        </div>
+
+        <!-- Surrey BC Services -->
+        <div class="card group hover:scale-105 transition-transform duration-300">
+          <h3 class="text-xl font-semibold text-white mb-3">
+            <a href="/financial-advisor-surrey-bc" class="hover:text-primary-400">Financial Advisor Surrey BC</a>
+          </h3>
+          <p class="text-gray-300 text-sm mb-4">
+            Dedicated financial advisor Surrey BC services with comprehensive financial planning for Fraser Valley residents.
+          </p>
+          <a href="/financial-advisor-surrey-bc" class="text-accent-400 hover:text-accent-300 text-sm font-medium">Learn More →</a>
+        </div>
+
+        <!-- Downtown Vancouver -->
+        <div class="card group hover:scale-105 transition-transform duration-300">
+          <h3 class="text-xl font-semibold text-white mb-3">
+            <a href="/financial-advisor-downtown-vancouver" class="hover:text-primary-400">Financial Advisor Downtown Vancouver</a>
+          </h3>
+          <p class="text-gray-300 text-sm mb-4">
+            Convenient financial advisor downtown Vancouver location serving professionals and business owners in Vancouver's core.
+          </p>
+          <a href="/financial-advisor-downtown-vancouver" class="text-primary-400 hover:text-primary-300 text-sm font-medium">Learn More →</a>
+        </div>
+
+        <!-- Insurance Planning -->
+        <div class="card group hover:scale-105 transition-transform duration-300">
+          <h3 class="text-xl font-semibold text-white mb-3">
+            <a href="/insurance-planning-vancouver" class="hover:text-primary-400">Insurance Planning Vancouver</a>
+          </h3>
+          <p class="text-gray-300 text-sm mb-4">
+            Comprehensive insurance planning Vancouver BC with life insurance, disability coverage, and income protection strategies.
+          </p>
+          <a href="/insurance-planning-vancouver" class="text-primary-400 hover:text-primary-300 text-sm font-medium">Learn More →</a>
+        </div>
+
+        <!-- Estate Planning -->
+        <div class="card group hover:scale-105 transition-transform duration-300">
+          <h3 class="text-xl font-semibold text-white mb-3">
+            <a href="/estate-planning-vancouver" class="hover:text-primary-400">Estate Planning Vancouver</a>
+          </h3>
+          <p class="text-gray-300 text-sm mb-4">
+            Expert estate planning Vancouver BC with trust optimization, wealth transfer strategies, and tax minimization.
+          </p>
+          <a href="/estate-planning-vancouver" class="text-accent-400 hover:text-accent-300 text-sm font-medium">Learn More →</a>
+        </div>
+
+        <!-- Business Services -->
+        <div class="card group hover:scale-105 transition-transform duration-300">
+          <h3 class="text-xl font-semibold text-white mb-3">
+            <a href="/business-services-vancouver" class="hover:text-primary-400">Business Services Vancouver</a>
+          </h3>
+          <p class="text-gray-300 text-sm mb-4">
+            Strategic business services Vancouver BC with succession planning, emergency business loans, and integrated financial strategies.
+          </p>
+          <a href="/business-services-vancouver" class="text-primary-400 hover:text-primary-300 text-sm font-medium">Learn More →</a>
+        </div>
+
+        <!-- Emergency Services -->
+        <div class="card group hover:scale-105 transition-transform duration-300">
+          <h3 class="text-xl font-semibold text-white mb-3">
+            <a href="/emergency-financial-consultation" class="hover:text-primary-400">Emergency Financial Help</a>
+          </h3>
+          <p class="text-gray-300 text-sm mb-4">
+            Immediate financial problem solutions with emergency consultation services for urgent financial situations.
+          </p>
+          <a href="/emergency-financial-consultation" class="text-accent-400 hover:text-accent-300 text-sm font-medium">Learn More →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comprehensive Services Coverage -->
+  <section class="py-6 px-4 sm:px-6 lg:px-8 bg-gray-900">
+    <div class="container-custom mx-auto">
+      <div class="text-center mb-8 observe-scroll">
+        <h2 class="text-3xl lg:text-4xl font-bold mb-4">
+          <span class="text-white">Complete Financial Solutions</span>
+          <span class="gradient-text"> Across Vancouver BC</span>
+        </h2>
+        <p class="text-lg text-gray-300 max-w-3xl mx-auto">
+          From emergency financial consultation Vancouver to comprehensive wealth management Vancouver, 
+          we're your complete financial advisor Vancouver BC solution.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 text-center">
+        <div class="observe-scroll">
+          <h4 class="text-sm font-medium text-gray-300 mb-2">Investment Services</h4>
+          <ul class="text-xs text-gray-400 space-y-1">
+            <li><a href="/investment-management" class="hover:text-primary-400">Investment Management Vancouver BC</a></li>
+            <li><a href="/investment-management" class="hover:text-primary-400">Portfolio Management Vancouver</a></li>
+            <li><a href="/investment-management" class="hover:text-primary-400">Asset Allocation Vancouver BC</a></li>
+          </ul>
+        </div>
+        
+        <div class="observe-scroll">
+          <h4 class="text-sm font-medium text-gray-300 mb-2">Retirement Planning</h4>
+          <ul class="text-xs text-gray-400 space-y-1">
+            <li><a href="/retirement-planning" class="hover:text-primary-400">Retirement Planning Vancouver BC</a></li>
+            <li><a href="/retirement-planning" class="hover:text-primary-400">RRSP Advice Vancouver</a></li>
+            <li><a href="/retirement-planning" class="hover:text-primary-400">Pension Planning BC</a></li>
+          </ul>
+        </div>
+        
+        <div class="observe-scroll">
+          <h4 class="text-sm font-medium text-gray-300 mb-2">Fee-Only Services</h4>
+          <ul class="text-xs text-gray-400 space-y-1">
+            <li><a href="/fee-only-financial-advisor" class="hover:text-primary-400">Fee-Only Financial Advisor</a></li>
+            <li><a href="/financial-advisor-fees-vancouver" class="hover:text-primary-400">Financial Advisor Fees Vancouver</a></li>
+            <li><a href="/financial-advisor-fees-vancouver" class="hover:text-primary-400">Compare Financial Planners BC</a></li>
+          </ul>
+        </div>
+        
+        <div class="observe-scroll">
+          <h4 class="text-sm font-medium text-gray-300 mb-2">Location Services</h4>
+          <ul class="text-xs text-gray-400 space-y-1">
+            <li><a href="/financial-advisor-surrey-bc" class="hover:text-primary-400">Financial Advisor Surrey BC</a></li>
+            <li><a href="/financial-advisor-downtown-vancouver" class="hover:text-primary-400">Downtown Vancouver</a></li>
+            <li><a href="/hire-financial-advisor-vancouver" class="hover:text-primary-400">Hire Financial Advisor Vancouver</a></li>
+          </ul>
+        </div>
+        
+        <div class="observe-scroll">
+          <h4 class="text-sm font-medium text-gray-300 mb-2">Problem Solutions</h4>
+          <ul class="text-xs text-gray-400 space-y-1">
+            <li><a href="/financial-problems-solutions" class="hover:text-primary-400">Financial Problems Solutions</a></li>
+            <li><a href="/financial-problems-solutions" class="hover:text-primary-400">Debt Consolidation Vancouver BC</a></li>
+            <li><a href="/emergency-financial-consultation" class="hover:text-primary-400">Emergency Consultation</a></li>
+          </ul>
+        </div>
+        
+        <div class="observe-scroll">
+          <h4 class="text-sm font-medium text-gray-300 mb-2">Reviews & Hiring</h4>
+          <ul class="text-xs text-gray-400 space-y-1">
+            <li><a href="/financial-advisor-fees-vancouver" class="hover:text-primary-400">Financial Advisor Reviews Vancouver</a></li>
+            <li><a href="/hire-financial-advisor-vancouver" class="hover:text-primary-400">Best Financial Planner Vancouver</a></li>
+            <li><a href="/hire-financial-advisor-vancouver" class="hover:text-primary-400">Top Investment Advisor Vancouver</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="text-center mt-12 observe-scroll">
+        <p class="text-gray-400 text-sm max-w-4xl mx-auto">
+          Serving all of Metro Vancouver including Vancouver, Surrey, Burnaby, Richmond, North Vancouver, West Vancouver, 
+          Coquitlam, Langley, Delta, New Westminster, and the entire Fraser Valley with comprehensive 
+          financial advisor Vancouver BC services, wealth management Vancouver solutions, and investment advisor Vancouver BC expertise.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Section with Fixed Button Spacing -->
+  <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-black via-gray-900 to-black">
+    <div class="container-custom mx-auto text-center">
+      <div class="observe-scroll">
+        <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+          <span class="text-white">Transform Your</span>
+          <span class="gradient-text"> Financial Future Today</span>
+        </h2>
+        <p class="text-xl text-gray-300 max-w-4xl mx-auto mb-12 leading-relaxed">
+          Join over 3000+ satisfied clients who trust WestGroup Financial with their wealth management. 
+          As fee-only fiduciary advisors, we're committed to your success, not sales commissions.
+        </p>
+        <!-- Fixed mobile button spacing -->
+        <div class="flex flex-col sm:flex-row gap-8 justify-center">
+          <a href="/contact" class="bg-gradient-to-r from-accent-600 to-accent-500 hover:from-accent-500 hover:to-accent-400 text-gray-900 font-medium text-xl px-10 py-5 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center">
+            <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+            Schedule Free Consultation
+          </a>
+          <a href="/services" class="bg-transparent border-2 border-accent-500 text-accent-300 hover:bg-gradient-to-r hover:from-accent-600 hover:to-accent-500 hover:text-gray-900 hover:border-transparent font-medium text-xl px-10 py-5 rounded-lg backdrop-blur-sm transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center">
+            <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+            </svg>
+            Explore Our Services
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
