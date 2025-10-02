@@ -11,7 +11,7 @@ function CardSwapDemo() {
   return (
     <div className="w-full flex items-center justify-center">
       {/* Desktop: Side by side, Mobile: Stacked vertically centered */}
-      <div className="flex flex-col lg:flex-row gap-12 lg:gap-8 items-center justify-center w-full max-w-7xl mx-auto px-4">
+      <div className="flex flex-col lg:flex-row gap-4 lg:gap-4 items-center justify-center w-full max-w-7xl mx-auto px-4">
         {/* First Card Stack */}
         <div
           className="relative w-full flex items-center justify-center"
