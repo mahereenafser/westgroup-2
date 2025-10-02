@@ -15,18 +15,19 @@ function CardSwapDemo() {
         {/* First Card Stack */}
         <div
           className="relative w-full lg:w-1/2 flex items-center justify-center"
-          style={{ height: '500px' }}
+          style={{ height: '500px', transform: 'scaleX(-1)' }}
         >
-          <CardSwap
-            width={750}
-            height={280}
-            cardDistance={50}
-            verticalDistance={50}
-            delay={4000}
-            pauseOnHover={true}
-            easing="power"
-            visibleCards={4}
-          >
+          <div style={{ transform: 'scaleX(-1)' }}>
+            <CardSwap
+              width={750}
+              height={280}
+              cardDistance={50}
+              verticalDistance={50}
+              delay={4000}
+              pauseOnHover={true}
+              easing="power"
+              visibleCards={4}
+            >
             {/* Wealth Management */}
             <Card
               className="cursor-pointer hover:border-primary-400/60"
@@ -98,7 +99,8 @@ function CardSwapDemo() {
                 Comprehensive estate planning to protect your legacy and ensure efficient wealth transfer to future generations.
               </p>
             </Card>
-          </CardSwap>
+            </CardSwap>
+          </div>
         </div>
 
         {/* Image 1 */}
@@ -106,7 +108,7 @@ function CardSwapDemo() {
           <img
             src="/images/image-1.webp"
             alt="Financial Planning"
-            className="w-full h-auto rounded-3xl shadow-2xl object-cover max-w-2xl"
+            className="w-full h-auto rounded-3xl shadow-2xl object-cover"
           />
         </div>
       </div>
@@ -118,7 +120,7 @@ function CardSwapDemo() {
           <img
             src="/images/image-2.webp"
             alt="Financial Advisory"
-            className="w-full h-auto rounded-3xl shadow-2xl object-cover max-w-2xl"
+            className="w-full h-auto rounded-3xl shadow-2xl object-cover"
           />
         </div>
 
