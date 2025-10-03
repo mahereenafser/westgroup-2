@@ -109,32 +109,32 @@ function CardSwapDemo() {
           >
             {/* Retirement Planning */}
             <CardNew onClick={() => handleCardClick('/retirement-planning')}>
-              <div className="flex items-start gap-4">
-                <div className="p-2 bg-gradient-to-r from-accent-600 to-accent-500 rounded-xl shadow-lg flex-shrink-0">
-                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="flex items-start gap-2 sm:gap-4">
+                <div className="p-1.5 sm:p-2 bg-gradient-to-r from-accent-600 to-accent-500 rounded-xl shadow-lg flex-shrink-0">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
                   </svg>
                 </div>
-                <div className="flex-1">
-                  <h3 className="text-base font-bold text-white mb-1.5">Retirement Income Planning</h3>
-                  <p className="text-xs text-gray-300 leading-relaxed mb-2">
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-sm sm:text-base font-bold text-white mb-1">Retirement Income Planning</h3>
+                  <p className="text-[10px] sm:text-xs text-gray-300 leading-tight sm:leading-relaxed mb-1.5">
                     Strategic retirement planning to ensure you maintain your lifestyle while minimizing tax burden.
                   </p>
-                  <ul className="space-y-1 mb-2 text-xs text-gray-400 flex flex-wrap gap-x-4">
+                  <ul className="space-y-0.5 mb-1.5 text-[10px] sm:text-xs text-gray-400 flex flex-wrap gap-x-2 sm:gap-x-4">
                     <li className="flex items-center">
-                      <span className="w-1 h-1 bg-accent-400 rounded-full mr-1.5"></span>
+                      <span className="w-1 h-1 bg-accent-400 rounded-full mr-1"></span>
                       RRSP/RRIF optimization
                     </li>
                     <li className="flex items-center">
-                      <span className="w-1 h-1 bg-accent-400 rounded-full mr-1.5"></span>
+                      <span className="w-1 h-1 bg-accent-400 rounded-full mr-1"></span>
                       Pension planning
                     </li>
                     <li className="flex items-center">
-                      <span className="w-1 h-1 bg-accent-400 rounded-full mr-1.5"></span>
+                      <span className="w-1 h-1 bg-accent-400 rounded-full mr-1"></span>
                       Long-term care
                     </li>
                   </ul>
-                  <a href="/retirement-planning" className="text-accent-400 hover:text-accent-300 text-xs font-medium inline-flex items-center group">
+                  <a href="/retirement-planning" className="text-accent-400 hover:text-accent-300 text-[10px] sm:text-xs font-medium inline-flex items-center group">
                     Learn More
                     <svg className="w-3 h-3 ml-1 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"></path>
@@ -146,32 +146,32 @@ function CardSwapDemo() {
 
             {/* Mortgage Advisory */}
             <CardNew onClick={() => handleCardClick('/mortgage-services-vancouver')}>
-              <div className="flex items-start gap-4">
-                <div className="p-2 bg-gradient-to-r from-green-600 to-green-500 rounded-xl shadow-lg flex-shrink-0">
-                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="flex items-start gap-2 sm:gap-4">
+                <div className="p-1.5 sm:p-2 bg-gradient-to-r from-green-600 to-green-500 rounded-xl shadow-lg flex-shrink-0">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
                   </svg>
                 </div>
-                <div className="flex-1">
-                  <h3 className="text-base font-bold text-white mb-1.5">Mortgage Advisory</h3>
-                  <p className="text-xs text-gray-300 leading-relaxed mb-2">
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-sm sm:text-base font-bold text-white mb-1">Mortgage Advisory</h3>
+                  <p className="text-[10px] sm:text-xs text-gray-300 leading-tight sm:leading-relaxed mb-1.5">
                     Strategic mortgage planning and refinancing advice to optimize real estate investments and cash flow.
                   </p>
-                  <ul className="space-y-1 mb-2 text-xs text-gray-400 flex flex-wrap gap-x-4">
+                  <ul className="space-y-0.5 mb-1.5 text-[10px] sm:text-xs text-gray-400 flex flex-wrap gap-x-2 sm:gap-x-4">
                     <li className="flex items-center">
-                      <span className="w-1 h-1 bg-green-400 rounded-full mr-1.5"></span>
+                      <span className="w-1 h-1 bg-green-400 rounded-full mr-1"></span>
                       Mortgage structure optimization
                     </li>
                     <li className="flex items-center">
-                      <span className="w-1 h-1 bg-green-400 rounded-full mr-1.5"></span>
+                      <span className="w-1 h-1 bg-green-400 rounded-full mr-1"></span>
                       Refinancing strategies
                     </li>
                     <li className="flex items-center">
-                      <span className="w-1 h-1 bg-green-400 rounded-full mr-1.5"></span>
+                      <span className="w-1 h-1 bg-green-400 rounded-full mr-1"></span>
                       Investment property planning
                     </li>
                   </ul>
-                  <a href="/mortgage-services-vancouver" className="text-green-400 hover:text-green-300 text-xs font-medium inline-flex items-center group">
+                  <a href="/mortgage-services-vancouver" className="text-green-400 hover:text-green-300 text-[10px] sm:text-xs font-medium inline-flex items-center group">
                     Learn More
                     <svg className="w-3 h-3 ml-1 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"></path>
@@ -183,32 +183,32 @@ function CardSwapDemo() {
 
             {/* Tax Strategies */}
             <CardNew onClick={() => handleCardClick('/tax-planning-vancouver')}>
-              <div className="flex items-start gap-4">
-                <div className="p-2 bg-gradient-to-r from-primary-500 to-accent-500 rounded-xl shadow-lg flex-shrink-0">
-                  <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="flex items-start gap-2 sm:gap-4">
+                <div className="p-1.5 sm:p-2 bg-gradient-to-r from-primary-500 to-accent-500 rounded-xl shadow-lg flex-shrink-0">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
                   </svg>
                 </div>
-                <div className="flex-1">
-                  <h3 className="text-base font-bold text-white mb-1.5">Tax-Efficient Strategies</h3>
-                  <p className="text-xs text-gray-300 leading-relaxed mb-2">
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-sm sm:text-base font-bold text-white mb-1">Tax-Efficient Strategies</h3>
+                  <p className="text-[10px] sm:text-xs text-gray-300 leading-tight sm:leading-relaxed mb-1.5">
                     Advanced tax planning and optimization strategies to minimize your tax burden while maximizing after-tax investment returns.
                   </p>
-                  <ul className="space-y-1 mb-2 text-xs text-gray-400 flex flex-wrap gap-x-4">
+                  <ul className="space-y-0.5 mb-1.5 text-[10px] sm:text-xs text-gray-400 flex flex-wrap gap-x-2 sm:gap-x-4">
                     <li className="flex items-center">
-                      <span className="w-1 h-1 bg-primary-400 rounded-full mr-1.5"></span>
+                      <span className="w-1 h-1 bg-primary-400 rounded-full mr-1"></span>
                       Corporate tax structure optimization
                     </li>
                     <li className="flex items-center">
-                      <span className="w-1 h-1 bg-primary-400 rounded-full mr-1.5"></span>
+                      <span className="w-1 h-1 bg-primary-400 rounded-full mr-1"></span>
                       Capital gains tax minimization
                     </li>
                     <li className="flex items-center">
-                      <span className="w-1 h-1 bg-primary-400 rounded-full mr-1.5"></span>
+                      <span className="w-1 h-1 bg-primary-400 rounded-full mr-1"></span>
                       Income splitting strategies
                     </li>
                   </ul>
-                  <a href="/tax-planning-vancouver" className="text-primary-400 hover:text-primary-300 text-xs font-medium inline-flex items-center group">
+                  <a href="/tax-planning-vancouver" className="text-primary-400 hover:text-primary-300 text-[10px] sm:text-xs font-medium inline-flex items-center group">
                     Learn More
                     <svg className="w-3 h-3 ml-1 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"></path>
@@ -220,32 +220,32 @@ function CardSwapDemo() {
 
             {/* Business Succession */}
             <CardNew onClick={() => handleCardClick('/business-services-vancouver')}>
-              <div className="flex items-start gap-4">
-                <div className="p-2 bg-gradient-to-r from-primary-600 to-accent-600 rounded-xl shadow-lg flex-shrink-0">
-                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="flex items-start gap-2 sm:gap-4">
+                <div className="p-1.5 sm:p-2 bg-gradient-to-r from-primary-600 to-accent-600 rounded-xl shadow-lg flex-shrink-0">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
                   </svg>
                 </div>
-                <div className="flex-1">
-                  <h3 className="text-base font-bold text-white mb-1.5">Business Succession Planning</h3>
-                  <p className="text-xs text-gray-300 leading-relaxed mb-2">
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-sm sm:text-base font-bold text-white mb-1">Business Succession Planning</h3>
+                  <p className="text-[10px] sm:text-xs text-gray-300 leading-tight sm:leading-relaxed mb-1.5">
                     Strategic planning for business owners to ensure smooth transitions, maximize value, and minimize tax implications during business succession.
                   </p>
-                  <ul className="space-y-1 mb-2 text-xs text-gray-400 flex flex-wrap gap-x-4">
+                  <ul className="space-y-0.5 mb-1.5 text-[10px] sm:text-xs text-gray-400 flex flex-wrap gap-x-2 sm:gap-x-4">
                     <li className="flex items-center">
-                      <span className="w-1 h-1 bg-accent-400 rounded-full mr-1.5"></span>
+                      <span className="w-1 h-1 bg-accent-400 rounded-full mr-1"></span>
                       Business valuation and exit planning
                     </li>
                     <li className="flex items-center">
-                      <span className="w-1 h-1 bg-accent-400 rounded-full mr-1.5"></span>
+                      <span className="w-1 h-1 bg-accent-400 rounded-full mr-1"></span>
                       Key person insurance strategies
                     </li>
                     <li className="flex items-center">
-                      <span className="w-1 h-1 bg-accent-400 rounded-full mr-1.5"></span>
+                      <span className="w-1 h-1 bg-accent-400 rounded-full mr-1"></span>
                       Family succession coordination
                     </li>
                   </ul>
-                  <a href="/business-services-vancouver" className="text-accent-400 hover:text-accent-300 text-xs font-medium inline-flex items-center group">
+                  <a href="/business-services-vancouver" className="text-accent-400 hover:text-accent-300 text-[10px] sm:text-xs font-medium inline-flex items-center group">
                     Learn More
                     <svg className="w-3 h-3 ml-1 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"></path>
