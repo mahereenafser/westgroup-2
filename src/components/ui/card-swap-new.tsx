@@ -229,7 +229,14 @@ const CardSwapNew = ({
       ? cloneElement(child as React.ReactElement<any>, {
           key: i,
           ref: refs[i],
-          style: { width, height, ...(child.props.style ?? {}) },
+          style: {
+            width: '90vw',
+            maxWidth: width,
+            height: 'auto',
+            minHeight: '200px',
+            ...(child.props.style ?? {})
+          },
+          className: `${child.props.className || ''} lg:!w-[${width}px] lg:!h-[${height}px]`,
           onClick: (e: React.MouseEvent) => {
             child.props.onClick?.(e);
             onCardClick?.(i);
@@ -244,7 +251,7 @@ const CardSwapNew = ({
       className="relative w-full h-full perspective-[900px] overflow-visible flex items-center justify-center lg:justify-end"
       style={{ minHeight: height }}
     >
-      <div className="relative" style={{ width, height }}>
+      <div className="relative" style={{ width: '100%', maxWidth: width, height }}>
         {renderedChildren}
       </div>
     </div>
