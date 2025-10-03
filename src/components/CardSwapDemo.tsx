@@ -21,19 +21,34 @@ function CardSwapDemo() {
           <StackedCardsInteraction
             cards={[
               {
-                image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&auto=format&fit=crop&q=80",
-                title: "Insurance Planning",
-                description: "Comprehensive insurance strategies to protect your family, assets, and business interests.",
-              },
-              {
-                image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&auto=format&fit=crop&q=80",
-                title: "Estate Planning",
-                description: "Comprehensive estate planning to protect your legacy and ensure efficient wealth transfer to future generations.",
-              },
-              {
-                image: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&auto=format&fit=crop&q=80",
                 title: "Wealth Management",
-                description: "Sophisticated investment portfolio management with tax-efficient strategies to preserve and grow your wealth.",
+                description: "Sophisticated investment portfolio management with tax-efficient strategies designed to preserve and grow your wealth across market cycles.",
+                features: [
+                  "Portfolio diversification and rebalancing",
+                  "Tax-loss harvesting strategies",
+                  "Risk management and asset protection"
+                ],
+                link: "/services#wealth-management"
+              },
+              {
+                title: "Investment Management",
+                description: "Professional investment management with diversified portfolios, risk assessment, and performance monitoring.",
+                features: [
+                  "Portfolio construction and rebalancing",
+                  "Risk management strategies",
+                  "Performance analysis and reporting"
+                ],
+                link: "/investment-management"
+              },
+              {
+                title: "Estate Planning Strategies",
+                description: "Comprehensive estate planning to protect your legacy and ensure efficient wealth transfer to future generations.",
+                features: [
+                  "Trust structure optimization",
+                  "Estate tax minimization",
+                  "Charitable giving strategies"
+                ],
+                link: "/services#estate-planning"
               },
             ]}
           />
