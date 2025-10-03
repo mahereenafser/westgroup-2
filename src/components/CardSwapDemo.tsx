@@ -10,13 +10,13 @@ function CardSwapDemo() {
   };
 
   return (
-    <div className="w-full space-y-16 lg:space-y-24">
+    <div className="w-full space-y-8 lg:space-y-24">
       {/* First Row: Card Stack + Image */}
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center justify-center w-full max-w-7xl mx-auto px-4">
         {/* First Card Stack - Using StackedCardsInteraction */}
         <div
-          className="relative w-full lg:w-1/2 flex items-center justify-center"
-          style={{ height: '500px' }}
+          className="relative w-full lg:w-1/2 flex items-center justify-center order-1 lg:order-1"
+          style={{ minHeight: '450px' }}
         >
           <StackedCardsInteraction
             cards={[
@@ -76,7 +76,7 @@ function CardSwapDemo() {
         </div>
 
         {/* Image 1 */}
-        <div className="w-full lg:w-1/2 flex items-center justify-center">
+        <div className="w-full lg:w-1/2 flex items-center justify-center order-2 lg:order-2">
           <img
             src="/images/image-1.webp"
             alt="Financial Planning"
@@ -85,27 +85,18 @@ function CardSwapDemo() {
         </div>
       </div>
 
-      {/* Second Row: Image + Card Stack */}
+      {/* Second Row: Card Stack + Image 2 */}
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center justify-center w-full max-w-7xl mx-auto px-4">
-        {/* Image 2 */}
-        <div className="w-full lg:w-1/2 flex items-center justify-center order-2 lg:order-1">
-          <img
-            src="/images/image-2.webp"
-            alt="Financial Advisory"
-            className="w-full h-auto rounded-3xl shadow-2xl object-cover max-h-[700px]"
-          />
-        </div>
-
         {/* Second Card Stack */}
         <div
-          className="relative w-full lg:w-1/2 flex items-center justify-center order-1 lg:order-2 min-h-[500px] lg:min-h-[600px]"
+          className="relative w-full lg:w-1/2 flex items-center justify-center order-1 lg:order-2"
         >
-          <div className="scale-[0.85] sm:scale-95 lg:scale-100 w-full">
+          <div className="w-full max-w-md mx-auto lg:max-w-none">
             <CardSwap
-              width={900}
-              height={500}
-              cardDistance={50}
-              verticalDistance={50}
+              width={380}
+              height={380}
+              cardDistance={30}
+              verticalDistance={40}
               delay={4000}
               pauseOnHover={true}
               easing="power"
@@ -184,6 +175,15 @@ function CardSwapDemo() {
             </Card>
           </CardSwap>
           </div>
+        </div>
+
+        {/* Image 2 */}
+        <div className="w-full lg:w-1/2 flex items-center justify-center order-2 lg:order-1">
+          <img
+            src="/images/image-2.webp"
+            alt="Financial Advisory"
+            className="w-full h-auto rounded-3xl shadow-2xl object-cover max-h-[700px]"
+          />
         </div>
       </div>
     </div>
