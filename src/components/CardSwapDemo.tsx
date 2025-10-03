@@ -2,6 +2,7 @@
 
 import React from 'react';
 import CardSwap, { Card } from '@/components/ui/card-swap';
+import { StackedCardsInteraction } from '@/components/ui/stacked-cards-interaction';
 
 function CardSwapDemo() {
   const handleCardClick = (url: string) => {
@@ -12,93 +13,30 @@ function CardSwapDemo() {
     <div className="w-full space-y-16 lg:space-y-24">
       {/* First Row: Card Stack + Image */}
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center justify-center w-full max-w-7xl mx-auto px-4">
-        {/* First Card Stack */}
+        {/* First Card Stack - Using StackedCardsInteraction */}
         <div
           className="relative w-full lg:w-1/2 flex items-center justify-center"
           style={{ height: '500px' }}
         >
-          <CardSwap
-            width={750}
-            height={280}
-            cardDistance={-50}
-            verticalDistance={50}
-            delay={4000}
-            pauseOnHover={true}
-            easing="power"
-            visibleCards={4}
-          >
-            {/* Wealth Management */}
-            <Card
-              className="cursor-pointer hover:border-primary-400/60"
-              onClick={() => handleCardClick('/services#wealth-management')}
-            >
-              <div className="flex items-center mb-4">
-                <div className="p-3 bg-gradient-to-r from-primary-500 to-primary-400 rounded-xl mr-4 shadow-lg">
-                  <svg className="w-8 h-8 text-dark-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-semibold text-white">Wealth Management</h3>
-              </div>
-              <p className="text-base text-gray-300 leading-relaxed">
-                Sophisticated investment portfolio management with tax-efficient strategies to preserve and grow your wealth.
-              </p>
-            </Card>
-
-            {/* Investment Management */}
-            <Card
-              className="cursor-pointer hover:border-accent-400/60"
-              onClick={() => handleCardClick('/investment-management')}
-            >
-              <div className="flex items-center mb-4">
-                <div className="p-3 bg-gradient-to-r from-accent-500 to-primary-500 rounded-xl mr-4 shadow-lg">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-semibold text-white">Investment Management</h3>
-              </div>
-              <p className="text-base text-gray-300 leading-relaxed">
-                Professional investment management with diversified portfolios, risk assessment, and performance monitoring.
-              </p>
-            </Card>
-
-            {/* Insurance Planning */}
-            <Card
-              className="cursor-pointer hover:border-primary-400/60"
-              onClick={() => handleCardClick('/insurance-planning-vancouver')}
-            >
-              <div className="flex items-center mb-4">
-                <div className="p-3 bg-gradient-to-r from-primary-600 to-accent-500 rounded-xl mr-4 shadow-lg">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-semibold text-white">Insurance Planning</h3>
-              </div>
-              <p className="text-base text-gray-300 leading-relaxed">
-                Comprehensive insurance strategies to protect your family, assets, and business interests.
-              </p>
-            </Card>
-
-            {/* Estate Planning */}
-            <Card
-              className="cursor-pointer hover:border-accent-400/60"
-              onClick={() => handleCardClick('/services#estate-planning')}
-            >
-              <div className="flex items-center mb-4">
-                <div className="p-3 bg-gradient-to-r from-accent-600 to-primary-500 rounded-xl mr-4 shadow-lg">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-semibold text-white">Estate Planning</h3>
-              </div>
-              <p className="text-base text-gray-300 leading-relaxed">
-                Comprehensive estate planning to protect your legacy and ensure efficient wealth transfer to future generations.
-              </p>
-            </Card>
-          </CardSwap>
+          <StackedCardsInteraction
+            cards={[
+              {
+                image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&auto=format&fit=crop&q=80",
+                title: "Insurance Planning",
+                description: "Comprehensive insurance strategies to protect your family, assets, and business interests.",
+              },
+              {
+                image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&auto=format&fit=crop&q=80",
+                title: "Estate Planning",
+                description: "Comprehensive estate planning to protect your legacy and ensure efficient wealth transfer to future generations.",
+              },
+              {
+                image: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&auto=format&fit=crop&q=80",
+                title: "Wealth Management",
+                description: "Sophisticated investment portfolio management with tax-efficient strategies to preserve and grow your wealth.",
+              },
+            ]}
+          />
         </div>
 
         {/* Image 1 */}
