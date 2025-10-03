@@ -35,9 +35,9 @@ interface CardData {
 
 const StackedCardsInteraction = ({
   cards,
-  spreadDistance = 150,
+  spreadDistance = 450,
   rotationAngle = 0,
-  animationDelay = 0.1,
+  animationDelay = 0.05,
 }: {
   cards: CardData[];
   spreadDistance?: number;
@@ -50,43 +50,34 @@ const StackedCardsInteraction = ({
   const limitedCards = cards.slice(0, 3);
 
   return (
-    <div className="relative w-full h-full flex items-center justify-center">
-      <div className="relative w-[1200px] h-[450px]">
+    <div className="relative w-full h-full flex items-start justify-start">
+      <div className="relative w-full h-[450px]" onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}>
         {limitedCards.map((card, index) => {
-          const isFirst = index === 0;
-
           let xOffset = 0;
-          let rotation = 0;
 
-          if (limitedCards.length > 1) {
-            // When hovering, spread all cards horizontally
-            if (index === 0) {
-              xOffset = -spreadDistance;
-            } else if (index === 1) {
-              xOffset = 0;
-            } else if (index === 2) {
-              xOffset = spreadDistance;
-            }
+          if (isHovering) {
+            // When hovering, spread all cards horizontally from left
+            xOffset = index * spreadDistance;
           }
 
           return (
             <motion.div
               key={index}
-              className={cn("absolute left-1/2 -translate-x-1/2", isHovering ? `z-${10 + index}` : "z-0")}
+              className={cn("absolute left-0 top-0")}
+              style={{ zIndex: isHovering ? 10 + index : 10 - index }}
               initial={{ x: 0, rotate: 0 }}
               animate={{
-                x: isHovering ? xOffset : 0,
-                rotate: isHovering ? rotation : 0,
+                x: xOffset,
+                rotate: 0,
               }}
               transition={{
-                duration: 0.4,
+                duration: 0.5,
                 ease: "easeOut",
-                delay: isHovering ? index * animationDelay : 0,
+                delay: isHovering ? index * animationDelay : (limitedCards.length - 1 - index) * animationDelay,
                 type: "spring",
-                stiffness: 100,
+                stiffness: 120,
+                damping: 20,
               }}
-              onHoverStart={() => setIsHovering(true)}
-              onHoverEnd={() => setIsHovering(false)}
             >
               <Card>
                 <div className="flex-1">
