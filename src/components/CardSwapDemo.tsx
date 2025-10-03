@@ -80,7 +80,7 @@ function CardSwapDemo() {
           <img
             src="/images/image-1.webp"
             alt="Financial Planning"
-            className="w-full h-auto rounded-3xl shadow-2xl object-cover max-h-[600px]"
+            className="w-full h-auto rounded-3xl shadow-2xl object-cover max-h-[700px]"
           />
         </div>
       </div>
@@ -92,7 +92,7 @@ function CardSwapDemo() {
           <img
             src="/images/image-2.webp"
             alt="Financial Advisory"
-            className="w-full h-auto rounded-3xl shadow-2xl object-cover max-h-[600px]"
+            className="w-full h-auto rounded-3xl shadow-2xl object-cover max-h-[700px]"
           />
         </div>
 
