@@ -98,18 +98,19 @@ function CardSwapDemo() {
 
         {/* Second Card Stack */}
         <div
-          className="relative w-full lg:w-1/2 flex items-center justify-center order-1 lg:order-2 min-h-[450px] lg:min-h-[500px]"
+          className="relative w-full lg:w-1/2 flex items-center justify-center order-1 lg:order-2 min-h-[500px] lg:min-h-[600px]"
         >
-          <CardSwap
-            width={900}
-            height={500}
-            cardDistance={50}
-            verticalDistance={50}
-            delay={4000}
-            pauseOnHover={true}
-            easing="power"
-            visibleCards={4}
-          >
+          <div className="scale-[0.85] sm:scale-95 lg:scale-100 w-full">
+            <CardSwap
+              width={900}
+              height={500}
+              cardDistance={50}
+              verticalDistance={50}
+              delay={4000}
+              pauseOnHover={true}
+              easing="power"
+              visibleCards={4}
+            >
             {/* Retirement Planning */}
             <Card
               className="cursor-pointer hover:border-accent-400/60"
@@ -182,6 +183,7 @@ function CardSwapDemo() {
               </p>
             </Card>
           </CardSwap>
+          </div>
         </div>
       </div>
     </div>
