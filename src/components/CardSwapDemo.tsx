@@ -98,12 +98,11 @@ function CardSwapDemo() {
 
         {/* Second Card Stack */}
         <div
-          className="relative w-full lg:w-1/2 flex items-center justify-center order-1 lg:order-2"
-          style={{ height: '500px' }}
+          className="relative w-full lg:w-1/2 flex items-center justify-center order-1 lg:order-2 min-h-[450px] lg:min-h-[500px]"
         >
           <CardSwap
-            width={750}
-            height={380}
+            width={900}
+            height={500}
             cardDistance={50}
             verticalDistance={50}
             delay={4000}
