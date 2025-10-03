@@ -181,7 +181,7 @@ const StackedCardsInteraction = ({
         </div>
 
         {/* Carousel indicators */}
-        <div className="flex justify-center gap-1.5 mt-4">
+        <div className="flex justify-center gap-1 mt-3">
           {limitedCards.map((_, index) => (
             <button
               key={index}
@@ -190,8 +190,8 @@ const StackedCardsInteraction = ({
                 setCurrentIndex(index);
               }}
               className={cn(
-                "h-1 rounded-full transition-all duration-300",
-                index === currentIndex ? "bg-green-400 w-4" : "bg-gray-600 w-1"
+                "w-1 h-1 rounded-full transition-all duration-300",
+                index === currentIndex ? "bg-green-400 scale-125" : "bg-gray-600 opacity-60"
               )}
               aria-label={`Go to slide ${index + 1}`}
             />
