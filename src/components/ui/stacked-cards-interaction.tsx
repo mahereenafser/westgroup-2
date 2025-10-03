@@ -181,23 +181,24 @@ const StackedCardsInteraction = ({
         </div>
 
         {/* Carousel indicators */}
-        <div className="flex justify-center gap-1 mt-3">
+        <div className="flex justify-center items-center gap-1 mt-3">
           {limitedCards.map((_, index) => (
-            <button
+            <div
               key={index}
               onClick={() => {
                 setDirection(index > currentIndex ? 1 : -1);
                 setCurrentIndex(index);
               }}
               style={{
-                width: index === currentIndex ? '6px' : '4px',
-                height: '4px',
-                opacity: index === currentIndex ? 1 : 0.5
+                width: index === currentIndex ? '5px' : '3px',
+                height: '3px',
+                backgroundColor: index === currentIndex ? '#4ade80' : '#4b5563',
+                opacity: index === currentIndex ? 1 : 0.5,
+                borderRadius: '50%',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease'
               }}
-              className={cn(
-                "rounded-full transition-all duration-300",
-                index === currentIndex ? "bg-green-400" : "bg-gray-600"
-              )}
+              role="button"
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}
