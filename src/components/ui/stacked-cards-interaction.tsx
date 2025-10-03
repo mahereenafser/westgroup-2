@@ -189,9 +189,14 @@ const StackedCardsInteraction = ({
                 setDirection(index > currentIndex ? 1 : -1);
                 setCurrentIndex(index);
               }}
+              style={{
+                width: index === currentIndex ? '6px' : '4px',
+                height: '4px',
+                opacity: index === currentIndex ? 1 : 0.5
+              }}
               className={cn(
-                "w-1 h-1 rounded-full transition-all duration-300",
-                index === currentIndex ? "bg-green-400 scale-125" : "bg-gray-600 opacity-60"
+                "rounded-full transition-all duration-300",
+                index === currentIndex ? "bg-green-400" : "bg-gray-600"
               )}
               aria-label={`Go to slide ${index + 1}`}
             />
